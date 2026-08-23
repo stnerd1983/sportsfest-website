@@ -203,7 +203,6 @@
           <!-- Member B (Left) -->
           <div class="flex flex-col items-center">
             <div class="member-frame mb-4">
-              <!-- Resized to be in-between old size and lead size -->
               <div class="w-32 h-32 md:w-36 md:h-36 bg-brand-dark overflow-hidden">
                 <img src="memberb.png" alt="Barış Karakoç" class="w-full h-full object-cover">
               </div>
@@ -221,7 +220,6 @@
           <!-- Member E (Middle) -->
           <div class="flex flex-col items-center">
             <div class="member-frame mb-4">
-              <!-- Resized to be in-between old size and lead size -->
               <div class="w-32 h-32 md:w-36 md:h-36 bg-brand-dark overflow-hidden">
                 <img src="membere.png" alt="Eren Arda Bıçak" class="w-full h-full object-cover">
               </div>
@@ -239,7 +237,6 @@
           <!-- Member H (Right) -->
           <div class="flex flex-col items-center">
             <div class="member-frame mb-4">
-              <!-- Resized to be in-between old size and lead size -->
               <div class="w-32 h-32 md:w-36 md:h-36 bg-brand-dark overflow-hidden">
                 <img src="memberh.png" alt="Hikmet Eren Doğan" class="w-full h-full object-cover">
               </div>
@@ -257,7 +254,13 @@
         </div>
       </div>
 
-      <form action="mailto:info@bogazicisportsfest.com" method="post" enctype="text/plain" class="max-w-2xl mx-auto flex flex-col gap-4">
+      <!-- Background Email Form -->
+      <form id="contact-form" class="max-w-2xl mx-auto flex flex-col gap-4">
+        <!-- Integrated Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="7dd546ee-466e-4656-a16c-1c4d3c2ec018">
+        <input type="hidden" name="subject" value="New Contact Form Submission - Sports Fest">
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
         <div class="flex flex-col md:flex-row gap-4">
           <input type="text" name="Name" placeholder="Name" required class="contact-input">
           <input type="text" name="Surname" placeholder="Surname" required class="contact-input">
@@ -268,10 +271,59 @@
         </div>
         <textarea name="Message" rows="4" placeholder="Your message..." required class="contact-input text-left resize-none"></textarea>
         
-        <button type="submit" class="w-full bg-[#1e2a4a]/80 hover:bg-brand-card hover:text-brand-dark border border-white/40 text-white font-bold py-3 text-sm uppercase tracking-wider transition-all shadow-sm">
+        <button type="submit" id="submit-btn" class="w-full bg-[#1e2a4a]/80 hover:bg-brand-card hover:text-brand-dark border border-white/40 text-white font-bold py-3 text-sm uppercase tracking-wider transition-all shadow-sm">
           SEND
         </button>
+
+        <p id="form-result" class="text-xs font-bold uppercase tracking-wider text-center mt-2"></p>
       </form>
+
+      <!-- Background AJAX Submission Script -->
+      <script>
+        const form = document.getElementById('contact-form');
+        const result = document.getElementById('form-result');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const object = Object.fromEntries(formData);
+          const json = JSON.stringify(object);
+
+          submitBtn.disabled = true;
+          submitBtn.innerText = "SENDING...";
+          result.className = "text-xs font-bold uppercase tracking-wider text-center mt-2 text-white/70";
+          result.innerHTML = "Sending your message...";
+
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: json
+          })
+          .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+              result.className = "text-xs font-bold uppercase tracking-wider text-center mt-2 text-emerald-400";
+              result.innerHTML = "Thank you! Your message has been sent successfully.";
+              form.reset();
+            } else {
+              result.className = "text-xs font-bold uppercase tracking-wider text-center mt-2 text-red-400";
+              result.innerHTML = json.message || "Something went wrong. Please try again.";
+            }
+          })
+          .catch(error => {
+            result.className = "text-xs font-bold uppercase tracking-wider text-center mt-2 text-red-400";
+            result.innerHTML = "Failed to send message. Please check your internet connection.";
+          })
+          .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerText = "SEND";
+          });
+        });
+      </script>
 
     </div>
   </div>
