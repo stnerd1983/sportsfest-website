@@ -66,6 +66,23 @@
       font-display: swap;
     }
   </style>
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('mobile-menu-icon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    }
+  </script>
 </head>
 <body class="antialiased selection:bg-brand-accent selection:text-white relative">
 
@@ -83,6 +100,7 @@
         </div>
       </a>
 
+      <!-- Desktop Links -->
       <div class="hidden lg:flex items-center gap-7 text-sm font-semibold ml-6">
         <a href="index.html#about" class="text-brand-dark font-bold transition-colors">Home</a>
         <a href="index.html#disciplines" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">Disciplines</a>
@@ -97,11 +115,30 @@
       </div>
 
       <div class="flex items-center gap-4 ml-auto">
-        <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-h2 transition-all rounded-none shadow-sm">
+        <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="hidden lg:block px-5 py-2.5 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-h2 transition-all rounded-none shadow-sm">
           Apply Now!
         </a>
+        <!-- Mobile Menu Button -->
+        <button onclick="toggleMobileMenu()" class="lg:hidden text-brand-dark text-2xl focus:outline-none p-2 ml-2">
+          <i id="mobile-menu-icon" class="fa-solid fa-bars"></i>
+        </button>
       </div>
 
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden absolute top-24 left-0 w-full bg-brand-bg_primary border-b border-brand-border shadow-xl flex-col px-6 py-4 gap-2 text-sm font-bold z-40">
+      <a href="index.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Home</a>
+      <a href="index.html#disciplines" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Disciplines</a>
+      <a href="index.html#packages" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Packages</a>
+      <a href="index.html#history" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">History</a>
+      <a href="index.html#istanbul" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Istanbul</a>
+      <a href="faq.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">FAQ</a>
+      <a href="contact.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Contact Us</a>
+      <a href="gallery-legacy.html" class="text-brand-accent transition-colors py-3 border-b border-brand-divider flex items-center gap-2"><i class="fa-solid fa-images"></i> Legacy & Gallery</a>
+      <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="mt-4 mb-2 px-5 py-3 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest text-center transition-all rounded-none shadow-sm block">
+        Apply Now!
+      </a>
     </div>
   </nav>
 
@@ -544,7 +581,6 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Card 1 -->
         <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
           <div class="h-48 overflow-hidden bg-brand-divider">
             <img src="ferrytour.jpg" alt="Bosphorus Ferry Tour" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
@@ -555,7 +591,6 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
           <div class="h-48 overflow-hidden bg-brand-divider">
             <img src="southcampus.png" alt="Historic South Campus" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
@@ -566,7 +601,6 @@
           </div>
         </div>
 
-        <!-- Card 3 -->
         <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
           <div class="h-48 overflow-hidden bg-brand-divider">
             <img src="nightsbysk.png" alt="Istanbul Nightlife" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
@@ -577,7 +611,6 @@
           </div>
         </div>
         
-        <!-- Card 4 -->
         <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
           <div class="h-48 overflow-hidden bg-brand-divider">
             <img src="turkishfood.png" alt="Turkish Food" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
@@ -588,7 +621,6 @@
           </div>
         </div>
 
-        <!-- Card 5 -->
         <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
           <div class="h-48 overflow-hidden bg-brand-divider">
             <img src="placestovisit.png" alt="Places to Visit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
@@ -599,7 +631,6 @@
           </div>
         </div>
 
-        <!-- Card 6 -->
         <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
           <div class="h-48 overflow-hidden bg-brand-divider">
             <img src="istanbulcats.png" alt="Istanbul Cats" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
@@ -611,27 +642,6 @@
         </div>
 
       </div>
-    </div>
-  </section>
-
-  <!-- ================= PAST PARTICIPANTS ================= -->
-  <section class="py-20 relative z-10">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-      <h2 class="font-display text-4xl uppercase mb-4 text-brand-h1 tracking-wide">Past Participants & Global Community</h2>
-      <p class="text-brand-body text-sm max-w-xl mx-auto mb-10 font-medium">
-        Connecting universities through sport, culture, and competition since 1980.
-      </p>
-
-      <a href="gallery-legacy.html" class="inline-block sharp-card p-8 border-l-4 border-l-brand-accent hover:border-brand-accent transition-all max-w-xl mx-auto group cursor-pointer">
-        <div class="w-16 h-16 bg-brand-card border border-brand-border flex items-center justify-center text-brand-h2 text-2xl mx-auto mb-4 group-hover:text-brand-accent transition-colors">
-          <i class="fa-solid fa-photo-film"></i>
-        </div>
-        <h3 class="font-display text-3xl text-brand-h1 mb-2 tracking-wide">Explore Years of Sports Fest</h3>
-        <p class="text-xs text-brand-body mb-4 font-medium">Discover the universities, athletes, and memories that shaped Sports Fest.</p>
-        <span class="text-xs font-bold text-brand-accent uppercase tracking-wider inline-flex items-center gap-2 group-hover:text-brand-h2 transition-colors">
-          View Legacy Page <i class="fa-solid fa-arrow-right"></i>
-        </span>
-      </a>
     </div>
   </section>
 

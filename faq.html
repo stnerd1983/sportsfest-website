@@ -58,6 +58,23 @@
       border-bottom: 1px solid #E5E8EB;
     }
   </style>
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('mobile-menu-icon');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        menu.classList.add('hidden');
+        menu.classList.remove('flex');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    }
+  </script>
 </head>
 <body class="antialiased selection:bg-brand-accent selection:text-white min-h-screen flex flex-col justify-between relative overflow-x-hidden">
 
@@ -75,6 +92,7 @@
         </div>
       </a>
 
+      <!-- Desktop Links -->
       <div class="hidden lg:flex items-center gap-7 text-sm font-semibold ml-6">
         <a href="index.html" class="text-brand-h2 hover:text-brand-accent transition-colors flex items-center gap-2">
           <i class="fa-solid fa-arrow-left text-xs"></i> Home
@@ -83,21 +101,37 @@
         <a href="index.html#packages" class="text-brand-h2 hover:text-brand-accent transition-colors">Packages</a>
         <a href="index.html#history" class="text-brand-h2 hover:text-brand-accent transition-colors">History</a>
         <a href="index.html#istanbul" class="text-brand-h2 hover:text-brand-accent transition-colors">Istanbul</a>
-        
         <a href="faq.html" class="text-brand-dark font-bold border-b-2 border-brand-dark pb-1">FAQ</a>
         <a href="contact.html" class="text-brand-h2 hover:text-brand-accent transition-colors">Contact Us</a>
-
         <a href="gallery-legacy.html" class="px-3 py-1.5 border border-brand-border text-brand-h2 font-bold hover:bg-brand-bg_secondary hover:text-brand-accent transition-all flex items-center gap-1.5 rounded-none">
           <i class="fa-solid fa-images"></i> Legacy & Gallery
         </a>
       </div>
 
       <div class="flex items-center gap-4 ml-auto">
-        <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-h2 transition-all rounded-none shadow-sm">
+        <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="hidden lg:block px-5 py-2.5 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-h2 transition-all rounded-none shadow-sm">
           Apply Now!
         </a>
+        <!-- Mobile Menu Button -->
+        <button onclick="toggleMobileMenu()" class="lg:hidden text-brand-dark text-2xl focus:outline-none p-2 ml-2">
+          <i id="mobile-menu-icon" class="fa-solid fa-bars"></i>
+        </button>
       </div>
+    </div>
 
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden absolute top-24 left-0 w-full bg-brand-bg_primary border-b border-brand-border shadow-xl flex-col px-6 py-4 gap-2 text-sm font-bold z-40">
+      <a href="index.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Home</a>
+      <a href="index.html#disciplines" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Disciplines</a>
+      <a href="index.html#packages" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Packages</a>
+      <a href="index.html#history" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">History</a>
+      <a href="index.html#istanbul" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Istanbul</a>
+      <a href="faq.html" class="text-brand-dark transition-colors py-3 border-b border-brand-divider">FAQ</a>
+      <a href="contact.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Contact Us</a>
+      <a href="gallery-legacy.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider flex items-center gap-2"><i class="fa-solid fa-images"></i> Legacy & Gallery</a>
+      <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="mt-4 mb-2 px-5 py-3 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest text-center transition-all rounded-none shadow-sm block">
+        Apply Now!
+      </a>
     </div>
   </nav>
 
