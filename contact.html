@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Boğaziçi Sports Fest</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+            display: ['Anton', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              bg_primary: '#FCFBF8',
+              bg_secondary: '#F4F6F8',
+              card: '#FFFFFF',
+              dark: '#0A2A3D',
+              h1: '#0A2A3D',
+              h2: '#274B63',
+              body: '#5B7481',
+              accent: '#12879B',
+              border: '#E5E8EB',
+              divider: '#EEF2F5',
+              footer_text: '#B8C6D0',
+              premium: '#D9A62E'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0A2A3D;
+      color: #FFFFFF;
+    }
+    .matte-nav {
+      background: rgba(252, 251, 248, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #E5E8EB;
+    }
+    
+    .contact-input {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: white;
+      padding: 0.75rem;
+      width: 100%;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    .contact-input:focus {
+      border-color: #FFFFFF;
+    }
+    .contact-input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .lead-frame {
+      position: relative;
+      padding: 6px;
+      background: linear-gradient(135deg, #D9A62E 0%, #12879B 100%);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    .member-frame {
+      position: relative;
+      padding: 4px;
+      background: linear-gradient(135deg, #A4B0B9 0%, #12879B 100%);
+      box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-brand-accent selection:text-white relative min-h-screen">
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="fixed top-0 left-0 w-full z-50 matte-nav text-brand-body">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 border-r border-brand-divider pr-6">
+        <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-brand-border bg-brand-card flex items-center justify-center">
+          <img src="sportsfest.png" alt="Sports Fest Logo" class="w-full h-full object-cover">
+        </div>
+        <div class="text-left">
+          <span class="font-display text-2xl tracking-wide block leading-none text-brand-h1">SPORTS FEST</span>
+          <span class="text-[10px] text-brand-accent font-bold tracking-widest uppercase mt-1 block italic">#since1980</span>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-7 text-sm font-semibold ml-6">
+        <a href="index.html" class="text-brand-h2 hover:text-brand-accent transition-colors flex items-center gap-2">
+          <i class="fa-solid fa-arrow-left text-xs"></i> Home
+        </a>
+        <a href="index.html#disciplines" class="text-brand-h2 hover:text-brand-accent transition-colors">Disciplines</a>
+        <a href="index.html#packages" class="text-brand-h2 hover:text-brand-accent transition-colors">Packages</a>
+        <a href="index.html#history" class="text-brand-h2 hover:text-brand-accent transition-colors">History</a>
+        <a href="index.html#istanbul" class="text-brand-h2 hover:text-brand-accent transition-colors">Istanbul</a>
+        <a href="faq.html" class="text-brand-h2 hover:text-brand-accent transition-colors">FAQ</a>
+        
+        <a href="contact.html" class="text-brand-dark font-bold border-b-2 border-brand-dark pb-1">Contact Us</a>
+
+        <a href="gallery-legacy.html" class="px-3 py-1.5 border border-brand-border text-brand-h2 font-bold hover:bg-brand-bg_secondary hover:text-brand-accent transition-all flex items-center gap-1.5 rounded-none">
+          <i class="fa-solid fa-images text-brand-accent"></i> Legacy & Gallery
+        </a>
+      </div>
+
+      <div class="flex items-center gap-4 ml-auto">
+        <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-h2 transition-all rounded-none shadow-sm">
+          Apply Now!
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ================= HEADER BAR ================= -->
+  <div class="w-full bg-brand-bg_primary pt-32 pb-4 text-center border-b border-brand-border relative z-10">
+    <h1 class="font-display text-3xl md:text-4xl uppercase text-brand-h1 tracking-wide">CONTACT US</h1>
+  </div>
+
+  <!-- ================= MAIN CONTENT AREA ================= -->
+  <div class="relative w-full min-h-screen pb-20">
+    
+    <div class="absolute inset-0 -z-10 bg-brand-dark">
+      <img src="southcampus.png" alt="Campus Background" class="w-full h-full object-cover opacity-20 mix-blend-overlay">
+      <div class="absolute inset-0 bg-[#1e2a4a]/80 backdrop-blur-[2px]"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6 pt-12 relative z-10 text-center">
+      <h2 class="font-display text-2xl md:text-3xl uppercase tracking-widest mb-12 text-white">ORGANIZATION TEAM</h2>
+
+      <div class="flex flex-col items-center gap-10 mb-20">
+        
+        <!-- Lead Member -->
+        <div class="flex flex-col items-center">
+          <div class="lead-frame mb-4">
+            <div class="w-32 h-32 md:w-40 md:h-40 bg-brand-dark overflow-hidden">
+              <img src="lead.png" alt="Eylül Özer" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <div class="text-sm font-medium">
+            <div class="font-bold mb-1 text-brand-premium uppercase tracking-widest text-xs">Head of the Team</div>
+            <div class="mb-2 text-base font-bold">Eylül Özer</div>
+            <div class="font-bold text-[10px] uppercase opacity-70">Phone Number</div>
+            <div class="text-xs mb-2">+90 530 910 79 06</div>
+            <div class="font-bold text-[10px] uppercase opacity-70">Email</div>
+            <a href="mailto:eylul@bounsporkurulu.com" class="text-xs hover:text-brand-accent transition-colors">eylul@bounsporkurulu.com</a>
+          </div>
+        </div>
+
+        <!-- 3 Members Row -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 w-full max-w-4xl">
+          
+          <!-- Member B (Left) -->
+          <div class="flex flex-col items-center">
+            <div class="member-frame mb-4">
+              <div class="w-28 h-28 md:w-32 md:h-32 bg-brand-dark overflow-hidden">
+                <img src="memberb.png" alt="Barış Karakoç" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="text-sm font-medium">
+              <div class="font-bold mb-1 text-brand-accent uppercase tracking-widest text-[11px]">Team Member</div>
+              <div class="mb-2 text-base font-bold">Barış Karakoç</div>
+              <div class="font-bold text-[10px] uppercase opacity-70">Phone Number</div>
+              <div class="text-xs mb-2">+90 546 154 49 32</div>
+              <div class="font-bold text-[10px] uppercase opacity-70">Email</div>
+              <a href="mailto:baris@bounsporkurulu.com" class="text-xs hover:text-brand-accent transition-colors">baris@bounsporkurulu.com</a>
+            </div>
+          </div>
+
+          <!-- Member E (Middle) -->
+          <div class="flex flex-col items-center">
+            <div class="member-frame mb-4">
+              <div class="w-28 h-28 md:w-32 md:h-32 bg-brand-dark overflow-hidden">
+                <img src="membere.png" alt="Eren Arda Bıçak" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="text-sm font-medium">
+              <div class="font-bold mb-1 text-brand-accent uppercase tracking-widest text-[11px]">Team Member</div>
+              <div class="mb-2 text-base font-bold">Eren Arda Bıçak</div>
+              <div class="font-bold text-[10px] uppercase opacity-70">Phone Number</div>
+              <div class="text-xs mb-2">+90 539 330 37 60</div>
+              <div class="font-bold text-[10px] uppercase opacity-70">Email</div>
+              <a href="mailto:eren@bounsporkurulu.com" class="text-xs hover:text-brand-accent transition-colors">eren@bounsporkurulu.com</a>
+            </div>
+          </div>
+
+          <!-- Member H (Right) -->
+          <div class="flex flex-col items-center">
+            <div class="member-frame mb-4">
+              <div class="w-28 h-28 md:w-32 md:h-32 bg-brand-dark overflow-hidden">
+                <img src="memberh.png" alt="Hikmet Eren Doğan" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="text-sm font-medium">
+              <div class="font-bold mb-1 text-brand-accent uppercase tracking-widest text-[11px]">Team Member</div>
+              <div class="mb-2 text-base font-bold">Hikmet Eren Doğan</div>
+              <div class="font-bold text-[10px] uppercase opacity-70">Phone Number</div>
+              <div class="text-xs mb-2">+90 533 273 38 80</div>
+              <div class="font-bold text-[10px] uppercase opacity-70">Email</div>
+              <a href="mailto:hikmet@bounsporkurulu.com" class="text-xs hover:text-brand-accent transition-colors">hikmet@bounsporkurulu.com</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <form action="mailto:info@bogazicisportsfest.com" method="post" enctype="text/plain" class="max-w-2xl mx-auto flex flex-col gap-4">
+        <div class="flex flex-col md:flex-row gap-4">
+          <input type="text" name="Name" placeholder="Name" required class="contact-input">
+          <input type="text" name="Surname" placeholder="Surname" required class="contact-input">
+        </div>
+        <div class="flex flex-col md:flex-row gap-4">
+          <input type="email" name="Email" placeholder="Email *" required class="contact-input border-[rgba(255,255,255,0.4)]">
+          <input type="text" name="About" placeholder="About" class="contact-input">
+        </div>
+        <textarea name="Message" rows="4" placeholder="Your message..." required class="contact-input text-left resize-none"></textarea>
+        
+        <button type="submit" class="w-full bg-[#1e2a4a]/80 hover:bg-brand-card hover:text-brand-dark border border-white/40 text-white font-bold py-3 text-sm uppercase tracking-wider transition-all shadow-sm">
+          SEND
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-brand-dark pt-12 pb-8 relative z-10 w-full text-center">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="max-w-lg mx-auto mb-8">
+        <h4 class="font-display text-2xl tracking-wider mb-2 text-white">BOĞAZİÇİ UNIVERSITY SPORTS FEST</h4>
+        <p class="text-xs text-brand-footer_text mb-6 font-medium">Organized by Boğaziçi University Sports Committee</p>
+        
+        <div class="flex justify-center gap-6 text-sm font-semibold text-brand-footer_text">
+          <a href="https://www.sportscommittee.com" target="_blank" class="hover:text-brand-accent transition-colors">Sports Committee Website</a>
+          <span class="opacity-50">•</span>
+          <a href="mailto:info@bogazicisportsfest.com" class="hover:text-brand-accent transition-colors">info@bogazicisportsfest.com</a>
+        </div>
+
+        <div class="flex justify-center gap-4 mt-6">
+          <a href="https://www.youtube.com/@SportsCommittee1896" target="_blank" class="w-10 h-10 rounded-none bg-brand-card/5 border border-white/20 flex items-center justify-center text-white hover:bg-brand-card hover:text-brand-dark hover:border-brand-card transition-all">
+            <i class="fa-brands fa-youtube text-lg"></i>
+          </a>
+          <a href="https://www.instagram.com/sportsfest/" target="_blank" class="w-10 h-10 rounded-none bg-brand-card/5 border border-white/20 flex items-center justify-center text-white hover:bg-brand-card hover:text-brand-dark hover:border-brand-card transition-all">
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="my-8 flex flex-col items-center justify-center">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-xl border border-white/10 flex items-center justify-center bg-brand-dark overflow-hidden p-1 shadow-lg">
+          <video autoplay loop muted playsinline controlslist="nodownload" class="w-full h-full object-cover rounded-xl">
+            <source src="./torch-animation.mp4" type="video/mp4">
+          </video>
+        </div>
+        <span class="text-[11px] font-bold text-white tracking-widest uppercase mt-5 block">The Festival Flame Keeps Burning</span>
+      </div>
+
+      <div class="text-xs text-brand-footer_text border-t border-white/10 pt-6">
+        © 2027 Boğaziçi University Sports Committee. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

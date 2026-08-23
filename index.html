@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boğaziçi University | Sports Fest</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+            display: ['Anton', 'sans-serif'],
+            googly: ['"Googly Eyes"', 'cursive', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              bg_primary: '#FCFBF8',
+              bg_secondary: '#F4F6F8',
+              card: '#FFFFFF',
+              dark: '#0A2A3D',
+              h1: '#0A2A3D',
+              h2: '#274B63',
+              body: '#5B7481',
+              muted: '#8FA0AE',
+              accent: '#12879B', 
+              accent2: '#3A6EA5',
+              premium: '#D9A62E',
+              border: '#E5E8EB',
+              divider: '#EEF2F5',
+              footer_text: '#B8C6D0',
+              bronze: '#C5834C',
+              silver: '#A4B0B9'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #FCFBF8;
+      color: #5B7481;
+    }
+    .sharp-card {
+      background: #FFFFFF;
+      border: 1px solid #E5E8EB;
+      border-radius: 0px;
+    }
+    .matte-nav {
+      background: rgba(252, 251, 248, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #E5E8EB;
+    }
+    @font-face {
+      font-family: 'Googly Eyes';
+      src: local('Googly Eyes');
+      font-display: swap;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-brand-accent selection:text-white relative">
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="fixed top-0 left-0 w-full z-50 matte-nav">
+    <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 border-r border-brand-divider pr-6">
+        <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-brand-border bg-brand-card flex items-center justify-center">
+          <img src="sportsfest.png" alt="Sports Fest Logo" class="w-full h-full object-cover">
+        </div>
+        <div class="text-left">
+          <span class="font-display text-2xl tracking-wide block leading-none text-brand-h1">SPORTS FEST</span>
+          <span class="text-[10px] text-brand-accent font-bold tracking-widest uppercase mt-1 block italic">#since1980</span>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-7 text-sm font-semibold ml-6">
+        <a href="index.html#about" class="text-brand-dark font-bold transition-colors">Home</a>
+        <a href="index.html#disciplines" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">Disciplines</a>
+        <a href="index.html#packages" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">Packages</a>
+        <a href="index.html#history" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">History</a>
+        <a href="index.html#istanbul" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">Istanbul</a>
+        <a href="faq.html" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">FAQ</a>
+        <a href="contact.html" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">Contact Us</a>
+        <a href="gallery-legacy.html" class="px-3 py-1.5 border border-brand-border text-brand-h2 font-bold hover:bg-brand-bg_secondary hover:text-brand-accent transition-all flex items-center gap-1.5 rounded-none">
+          <i class="fa-solid fa-images"></i> Legacy & Gallery
+        </a>
+      </div>
+
+      <div class="flex items-center gap-4 ml-auto">
+        <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-h2 transition-all rounded-none shadow-sm">
+          Apply Now!
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="about" class="relative pt-28 pb-16 min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 -z-20 bg-brand-dark">
+      <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-90">
+        <source src="bg-video.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-6 text-center z-10 relative mt-4">
+      <a href="https://maps.app.goo.gl/CSjfqNHDzfjn5MvX8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-card/40 backdrop-blur-md border border-brand-border text-brand-h2 text-xs font-bold uppercase tracking-widest mb-8 hover:border-brand-accent hover:text-brand-accent transition-all group shadow-sm">
+        <i class="fa-solid fa-location-dot text-brand-premium group-hover:bounce"></i> 
+        <span>Istanbul — Where 2 Continents Meet</span>
+        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1 opacity-50"></i>
+      </a>
+
+      <h1 class="font-display text-6xl md:text-8xl tracking-wide mb-6 leading-tight text-[#EDFBFF]">
+        BOĞAZİÇİ UNIVERSITY <br />
+        <span class="block mt-10 text-[#8AEFFF]">SPORTS FEST</span>
+      </h1>
+
+      <p class="text-brand-body text-lg md:text-xl max-w-3xl mx-auto mb-8 font-medium leading-relaxed bg-brand-bg_primary/15 backdrop-blur-sm p-4 rounded-lg inline-block shadow-sm text-white">
+        Europe’s most prestigious student-organized international sports festival. Compete across continents, build lifelong friendships, and create history in Istanbul.
+      </p>
+
+      <div class="flex flex-col items-center justify-center mt-6 mb-4">
+        <div class="text-lg md:text-xl font-display tracking-widest text-brand-dark mb-6 bg-brand-card px-8 py-3 rounded-none border-2 border-brand-dark shadow-sm uppercase leading-relaxed">
+          SPORTS FEST 2027 <br> COMING SOON
+        </div>
+        
+        <div class="grid grid-cols-4 gap-4 md:gap-6 text-center opacity-40 select-none">
+          <div class="bg-brand-card border border-brand-border p-4 md:p-6 rounded-none shadow-sm">
+            <span class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
+            <span class="text-[11px] md:text-xs text-brand-h2 font-bold uppercase tracking-widest mt-2 block font-sans">Days</span>
+          </div>
+          <div class="bg-brand-card border border-brand-border p-4 md:p-6 rounded-none shadow-sm">
+            <span class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
+            <span class="text-[11px] md:text-xs text-brand-h2 font-bold uppercase tracking-widest mt-2 block font-sans">Hours</span>
+          </div>
+          <div class="bg-brand-card border border-brand-border p-4 md:p-6 rounded-none shadow-sm">
+            <span class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
+            <span class="text-[11px] md:text-xs text-brand-h2 font-bold uppercase tracking-widest mt-2 block font-sans">Mins</span>
+          </div>
+          <div class="bg-brand-card border border-brand-border p-4 md:p-6 rounded-none shadow-sm">
+            <span class="block text-5xl md:text-6xl font-googly text-brand-accent">00</span>
+            <span class="text-[11px] md:text-xs text-brand-h2 font-bold uppercase tracking-widest mt-2 block font-sans">Secs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= KEY STATS BANNER ================= -->
+  <section class="py-10 bg-brand-bg_secondary border-y border-brand-divider relative z-10">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="p-2 border-r border-brand-border last:border-0">
+          <span class="block font-display text-4xl md:text-5xl text-brand-h1 tracking-wide">4</span>
+          <span class="text-xs font-bold text-brand-h2 uppercase tracking-widest mt-2 block">DAYS</span>
+        </div>
+        <div class="p-2 border-r border-brand-border last:border-0">
+          <span class="block font-display text-4xl md:text-5xl text-brand-h1 tracking-wide">12</span>
+          <span class="text-xs font-bold text-brand-h2 uppercase tracking-widest mt-2 block">Sports Disciplines</span>
+        </div>
+        <div class="p-2 border-r border-brand-border last:border-0">
+          <span class="block font-display text-4xl md:text-5xl text-brand-h1 tracking-wide">+1000</span>
+          <span class="text-xs font-bold text-brand-h2 uppercase tracking-widest mt-2 block">International Athletes</span>
+        </div>
+        <div class="p-2">
+          <span class="block font-display text-4xl md:text-5xl text-brand-h1 tracking-wide">+10</span>
+          <span class="text-xs font-bold text-brand-h2 uppercase tracking-widest mt-2 block">Participating Countries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 12 SPORTS DISCIPLINES ================= -->
+  <section id="disciplines" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-brand-accent text-xs font-bold uppercase tracking-widest">Compete At The Highest Level</span>
+        <h2 class="font-display text-5xl md:text-6xl uppercase mt-3 text-brand-h1 tracking-wide">12 Sports Disciplines</h2>
+        <p class="text-brand-body text-sm mt-2 font-medium">Quotas will be announced, excluding swimming and table tennis.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+        
+        <!-- Swimming -->
+        <div onclick="this.toggleAttribute('data-pinned')" class="group sharp-card p-6 text-center transition-all duration-300 cursor-pointer border-t-2 border-t-brand-accent hover:border-brand-accent hover:-translate-y-1 data-[pinned]:border-brand-accent data-[pinned]:-translate-y-1 data-[pinned]:shadow-md hover:shadow-md">
+          <div class="text-brand-h2 text-3xl mb-4 transition-colors group-hover:text-brand-accent group-data-[pinned]:text-brand-accent"><i class="fa-solid fa-person-swimming"></i></div>
+          <h3 class="font-display text-2xl tracking-wide text-brand-h1">Swimming</h3>
+          <p class="text-xs text-brand-body mt-1 font-medium">Race Beyond Limits.</p>
+          <div class="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-data-[pinned]:grid-rows-[1fr] group-data-[pinned]:opacity-100">
+            <div class="overflow-hidden">
+              <div class="mt-4 pt-4 border-t border-brand-divider flex flex-col gap-3">
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Capacity</span><span class="block text-xs text-brand-h1 font-bold">No capacity limit</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Gender</span><span class="block text-xs text-brand-h1 font-bold">Male & Female</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Location</span><span class="block text-xs text-brand-h1 font-bold">Bebek Pool</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Water Polo -->
+        <div onclick="this.toggleAttribute('data-pinned')" class="group sharp-card p-6 text-center transition-all duration-300 cursor-pointer border-t-2 border-t-brand-accent hover:border-brand-accent hover:-translate-y-1 data-[pinned]:border-brand-accent data-[pinned]:-translate-y-1 data-[pinned]:shadow-md hover:shadow-md">
+          <div class="text-brand-h2 text-3xl mb-4 transition-colors group-hover:text-brand-accent group-data-[pinned]:text-brand-accent"><i class="fa-solid fa-life-ring"></i></div>
+          <h3 class="font-display text-2xl tracking-wide text-brand-h1">Water Polo</h3>
+          <p class="text-xs text-brand-body mt-1 font-medium">Strength Beneath the Surface.</p>
+          <div class="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-data-[pinned]:grid-rows-[1fr] group-data-[pinned]:opacity-100">
+            <div class="overflow-hidden">
+              <div class="mt-4 pt-4 border-t border-brand-divider flex flex-col gap-3">
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Capacity</span><span class="block text-xs text-brand-h1 font-bold">Quotas will be announced</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Gender</span><span class="block text-xs text-brand-h1 font-bold">Male & Female</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Location</span><span class="block text-xs text-brand-h1 font-bold">Bebek pool</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Football -->
+        <div onclick="this.toggleAttribute('data-pinned')" class="group sharp-card p-6 text-center transition-all duration-300 cursor-pointer border-t-2 border-t-brand-accent hover:border-brand-accent hover:-translate-y-1 data-[pinned]:border-brand-accent data-[pinned]:-translate-y-1 data-[pinned]:shadow-md hover:shadow-md">
+          <div class="text-brand-h2 text-3xl mb-4 transition-colors group-hover:text-brand-accent group-data-[pinned]:text-brand-accent"><i class="fa-solid fa-futbol"></i></div>
+          <h3 class="font-display text-2xl tracking-wide text-brand-h1">Football</h3>
+          <p class="text-xs text-brand-body mt-1 font-medium">Where Legends Compete.</p>
+          <div class="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-data-[pinned]:grid-rows-[1fr] group-data-[pinned]:opacity-100">
+            <div class="overflow-hidden">
+              <div class="mt-4 pt-4 border-t border-brand-divider flex flex-col gap-3">
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Capacity</span><span class="block text-xs text-brand-h1 font-bold">Quotas will be announced</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Gender</span><span class="block text-xs text-brand-h1 font-bold">Only Male</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Location</span><span class="block text-xs text-brand-h1 font-bold">Uçaksavar Sports Complex</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Basketball -->
+        <div onclick="this.toggleAttribute('data-pinned')" class="group sharp-card p-6 text-center transition-all duration-300 cursor-pointer border-t-2 border-t-brand-accent hover:border-brand-accent hover:-translate-y-1 data-[pinned]:border-brand-accent data-[pinned]:-translate-y-1 data-[pinned]:shadow-md hover:shadow-md">
+          <div class="text-brand-h2 text-3xl mb-4 transition-colors group-hover:text-brand-accent group-data-[pinned]:text-brand-accent"><i class="fa-solid fa-basketball"></i></div>
+          <h3 class="font-display text-2xl tracking-wide text-brand-h1">Basketball</h3>
+          <p class="text-xs text-brand-body mt-1 font-medium">Rise Above the Rim.</p>
+          <div class="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-data-[pinned]:grid-rows-[1fr] group-data-[pinned]:opacity-100">
+            <div class="overflow-hidden">
+              <div class="mt-4 pt-4 border-t border-brand-divider flex flex-col gap-3">
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Capacity</span><span class="block text-xs text-brand-h1 font-bold">Quotas will be announced</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Gender</span><span class="block text-xs text-brand-h1 font-bold">Male & Female</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Location</span><span class="block text-xs text-brand-h1 font-bold">South Campus Outdoor Court</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indoor Volleyball -->
+        <div onclick="this.toggleAttribute('data-pinned')" class="group sharp-card p-6 text-center transition-all duration-300 cursor-pointer border-t-2 border-t-brand-accent hover:border-brand-accent hover:-translate-y-1 data-[pinned]:border-brand-accent data-[pinned]:-translate-y-1 data-[pinned]:shadow-md hover:shadow-md">
+          <div class="text-brand-h2 text-3xl mb-4 transition-colors group-hover:text-brand-accent group-data-[pinned]:text-brand-accent"><i class="fa-solid fa-volleyball"></i></div>
+          <h3 class="font-display text-2xl tracking-wide text-brand-h1">Indoor Volleyball</h3>
+          <p class="text-xs text-brand-body mt-1 font-medium">Every Rally Counts.</p>
+          <div class="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-data-[pinned]:grid-rows-[1fr] group-data-[pinned]:opacity-100">
+            <div class="overflow-hidden">
+              <div class="mt-4 pt-4 border-t border-brand-divider flex flex-col gap-3">
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Capacity</span><span class="block text-xs text-brand-h1 font-bold">Quotas will be announced</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Gender</span><span class="block text-xs text-brand-h1 font-bold">Male & Female</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Location</span><span class="block text-xs text-brand-h1 font-bold">South Campus Dodge Hall</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outdoor Volleyball -->
+        <div onclick="this.toggleAttribute('data-pinned')" class="group sharp-card p-6 text-center transition-all duration-300 cursor-pointer border-t-2 border-t-brand-accent hover:border-brand-accent hover:-translate-y-1 data-[pinned]:border-brand-accent data-[pinned]:-translate-y-1 data-[pinned]:shadow-md hover:shadow-md">
+          <div class="text-brand-h2 text-3xl mb-4 transition-colors group-hover:text-brand-accent group-data-[pinned]:text-brand-accent"><i class="fa-solid fa-umbrella-beach"></i></div>
+          <h3 class="font-display text-2xl tracking-wide text-brand-h1">Outdoor Volleyball</h3>
+          <p class="text-xs text-brand-body mt-1 font-medium">Play Beyond Boundaries.</p>
+          <div class="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-data-[pinned]:grid-rows-[1fr] group-data-[pinned]:opacity-100">
+            <div class="overflow-hidden">
+              <div class="mt-4 pt-4 border-t border-brand-divider flex flex-col gap-3">
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Capacity</span><span class="block text-xs text-brand-h1 font-bold">Quotas will be announced</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Gender</span><span class="block text-xs text-brand-h1 font-bold">Male & Female</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Location</span><span class="block text-xs text-brand-h1 font-bold">South Campus Grass Field</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tennis -->
+        <div onclick="this.toggleAttribute('data-pinned')" class="group sharp-card p-6 text-center transition-all duration-300 cursor-pointer border-t-2 border-t-brand-accent hover:border-brand-accent hover:-translate-y-1 data-[pinned]:border-brand-accent data-[pinned]:-translate-y-1 data-[pinned]:shadow-md hover:shadow-md">
+          <div class="text-brand-h2 text-3xl mb-4 transition-colors group-hover:text-brand-accent group-data-[pinned]:text-brand-accent"><i class="fa-solid fa-baseball"></i></div>
+          <h3 class="font-display text-2xl tracking-wide text-brand-h1">Tennis</h3>
+          <p class="text-xs text-brand-body mt-1 font-medium">Every Point Matters.</p>
+          <div class="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-data-[pinned]:grid-rows-[1fr] group-data-[pinned]:opacity-100">
+            <div class="overflow-hidden">
+              <div class="mt-4 pt-4 border-t border-brand-divider flex flex-col gap-3">
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Capacity</span><span class="block text-xs text-brand-h1 font-bold">Quotas will be announced</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Gender</span><span class="block text-xs text-brand-h1 font-bold">Male & Female</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Location</span><span class="block text-xs text-brand-h1 font-bold">South Campus Tennis Field</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table Tennis -->
+        <div onclick="this.toggleAttribute('data-pinned')" class="group sharp-card p-6 text-center transition-all duration-300 cursor-pointer border-t-2 border-t-brand-accent hover:border-brand-accent hover:-translate-y-1 data-[pinned]:border-brand-accent data-[pinned]:-translate-y-1 data-[pinned]:shadow-md hover:shadow-md">
+          <div class="text-brand-h2 text-3xl mb-4 transition-colors group-hover:text-brand-accent group-data-[pinned]:text-brand-accent"><i class="fa-solid fa-table-tennis-paddle-ball"></i></div>
+          <h3 class="font-display text-2xl tracking-wide text-brand-h1">Table Tennis</h3>
+          <p class="text-xs text-brand-body mt-1 font-medium">Reflexes Define Champions.</p>
+          <div class="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-data-[pinned]:grid-rows-[1fr] group-data-[pinned]:opacity-100">
+            <div class="overflow-hidden">
+              <div class="mt-4 pt-4 border-t border-brand-divider flex flex-col gap-3">
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Capacity</span><span class="block text-xs text-brand-h1 font-bold">No capacity limit</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Gender</span><span class="block text-xs text-brand-h1 font-bold">Male & Female</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Location</span><span class="block text-xs text-brand-h1 font-bold">South Campus Özger Arnas Hall</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Futsal -->
+        <div onclick="this.toggleAttribute('data-pinned')" class="group sharp-card p-6 text-center transition-all duration-300 cursor-pointer border-t-2 border-t-brand-accent hover:border-brand-accent hover:-translate-y-1 data-[pinned]:border-brand-accent data-[pinned]:-translate-y-1 data-[pinned]:shadow-md hover:shadow-md">
+          <div class="text-brand-h2 text-3xl mb-4 transition-colors group-hover:text-brand-accent group-data-[pinned]:text-brand-accent"><i class="fa-solid fa-stopwatch-20"></i></div>
+          <h3 class="font-display text-2xl tracking-wide text-brand-h1">Futsal</h3>
+          <p class="text-xs text-brand-body mt-1 font-medium">Fast. Sharp. Relentless.</p>
+          <div class="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-data-[pinned]:grid-rows-[1fr] group-data-[pinned]:opacity-100">
+            <div class="overflow-hidden">
+              <div class="mt-4 pt-4 border-t border-brand-divider flex flex-col gap-3">
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Capacity</span><span class="block text-xs text-brand-h1 font-bold">Quotas will be announced</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Gender</span><span class="block text-xs text-brand-h1 font-bold">Male & Female</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Location</span><span class="block text-xs text-brand-h1 font-bold">Uçaksavar Sports Hall</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Handball -->
+        <div onclick="this.toggleAttribute('data-pinned')" class="group sharp-card p-6 text-center transition-all duration-300 cursor-pointer border-t-2 border-t-brand-accent hover:border-brand-accent hover:-translate-y-1 data-[pinned]:border-brand-accent data-[pinned]:-translate-y-1 data-[pinned]:shadow-md hover:shadow-md">
+          <div class="text-brand-h2 text-3xl mb-4 transition-colors group-hover:text-brand-accent group-data-[pinned]:text-brand-accent"><i class="fa-solid fa-hand-fist"></i></div>
+          <h3 class="font-display text-2xl tracking-wide text-brand-h1">Handball</h3>
+          <p class="text-xs text-brand-body mt-1 font-medium">Power Meets Precision.</p>
+          <div class="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-data-[pinned]:grid-rows-[1fr] group-data-[pinned]:opacity-100">
+            <div class="overflow-hidden">
+              <div class="mt-4 pt-4 border-t border-brand-divider flex flex-col gap-3">
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Capacity</span><span class="block text-xs text-brand-h1 font-bold">Quotas will be announced</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Gender</span><span class="block text-xs text-brand-h1 font-bold">Only Male</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Location</span><span class="block text-xs text-brand-h1 font-bold">Uçaksavar Sports Hall</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cheerleading -->
+        <div onclick="this.toggleAttribute('data-pinned')" class="group sharp-card p-6 text-center transition-all duration-300 cursor-pointer border-t-2 border-t-brand-accent hover:border-brand-accent hover:-translate-y-1 data-[pinned]:border-brand-accent data-[pinned]:-translate-y-1 data-[pinned]:shadow-md hover:shadow-md">
+          <div class="text-brand-h2 text-3xl mb-4 transition-colors group-hover:text-brand-accent group-data-[pinned]:text-brand-accent"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3 class="font-display text-2xl tracking-wide text-brand-h1">Cheerleading</h3>
+          <p class="text-xs text-brand-body mt-1 font-medium">Energy in Every Move.</p>
+          <div class="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-data-[pinned]:grid-rows-[1fr] group-data-[pinned]:opacity-100">
+            <div class="overflow-hidden">
+              <div class="mt-4 pt-4 border-t border-brand-divider flex flex-col gap-3">
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Capacity</span><span class="block text-xs text-brand-h1 font-bold">Quotas will be announced</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Gender</span><span class="block text-xs text-brand-h1 font-bold">Male & Female</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Location</span><span class="block text-xs text-brand-h1 font-bold">South Campus Outdoor Court</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badminton -->
+        <div onclick="this.toggleAttribute('data-pinned')" class="group sharp-card p-6 text-center transition-all duration-300 cursor-pointer border-t-2 border-t-brand-accent hover:border-brand-accent hover:-translate-y-1 data-[pinned]:border-brand-accent data-[pinned]:-translate-y-1 data-[pinned]:shadow-md hover:shadow-md">
+          <div class="text-brand-h2 text-3xl mb-4 transition-colors group-hover:text-brand-accent group-data-[pinned]:text-brand-accent"><i class="fa-solid fa-feather"></i></div>
+          <h3 class="font-display text-2xl tracking-wide text-brand-h1">Badminton</h3>
+          <p class="text-xs text-brand-body mt-1 font-medium">Pinpoint at Full Speed.</p>
+          <div class="grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-data-[pinned]:grid-rows-[1fr] group-data-[pinned]:opacity-100">
+            <div class="overflow-hidden">
+              <div class="mt-4 pt-4 border-t border-brand-divider flex flex-col gap-3">
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Capacity</span><span class="block text-xs text-brand-h1 font-bold">Quotas will be announced</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Gender</span><span class="block text-xs text-brand-h1 font-bold">Male & Female</span></div>
+                <div><span class="block text-[10px] font-bold text-brand-accent uppercase tracking-widest">Location</span><span class="block text-xs text-brand-h1 font-bold">Uçaksavar Campus Sports Complex</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REDESIGNED PACKAGES SECTION ================= -->
+  <section id="packages" class="py-24 relative bg-brand-bg_secondary border-y border-brand-divider">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      
+      <div class="text-center mb-16">
+        <span class="text-brand-h2 text-xs font-bold uppercase tracking-widest">All-Inclusive Festival Experience</span>
+        <h2 class="font-display text-5xl md:text-6xl uppercase mt-3 text-brand-h1 tracking-wide">Packages & Content</h2>
+      </div>
+
+      <!-- PARTICIPATION PACK -->
+      <div class="max-w-3xl mx-auto mb-8">
+        <div class="bg-white border border-brand-border shadow-sm relative pt-8 pb-8 px-8 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 w-full h-1.5 bg-brand-accent"></div>
+          <div>
+            <div class="text-[10px] uppercase font-bold tracking-widest text-brand-accent mb-2">FESTIVAL · PARTICIPATION PACK</div>
+            <h3 class="font-display text-4xl text-brand-h1 mb-6 uppercase tracking-wide">PARTICIPATION</h3>
+            
+            <div class="flex flex-col gap-3 text-sm text-brand-body font-medium">
+              <div class="flex gap-2"><span class="text-brand-accent font-bold">-</span><span>Lunch and Dinner for 3 days</span></div>
+              <div class="flex gap-2"><span class="text-brand-accent font-bold">-</span><span>Free Access to night and day events</span></div>
+              <div class="flex gap-2"><span class="text-brand-accent font-bold">-</span><span>Sports Fest Official Pack</span></div>
+              <div class="flex gap-2"><span class="text-brand-accent font-bold">-</span><span>Bosphorus Tour</span></div>
+              <div class="flex gap-2"><span class="text-brand-accent font-bold">-</span><span>Tournament Registration</span></div>
+              <div class="flex gap-2"><span class="text-brand-accent font-bold">-</span><span>Awards (Cup and Medals)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mb-20 text-sm text-brand-h2 font-bold max-w-3xl mx-auto text-center border-t border-brand-divider pt-6">
+        Arranging your own stay? Athletes can join on the participation fee alone — tournament, meals and festival access included; accommodation and transport on your own.
+      </p>
+
+      <!-- ACCOMMODATION PACKS SUBHEADING -->
+      <div class="text-center mb-10">
+        <h3 class="font-display text-4xl text-brand-h1 uppercase tracking-wide">Accommodation Packs</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        
+        <!-- Bronze / Hostel Pack -->
+        <div class="bg-white border border-brand-border shadow-sm relative pt-8 pb-8 px-8 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 w-full h-1.5 bg-brand-bronze"></div>
+          <div>
+            <div class="text-[10px] uppercase font-bold tracking-widest text-brand-bronze mb-2">BRONZE · HOSTEL PACK</div>
+            <h3 class="font-display text-4xl text-brand-h1 mb-6 uppercase tracking-wide">HOSTEL</h3>
+            
+            <div class="flex flex-col gap-3 text-sm text-brand-body font-medium">
+              <div class="flex gap-2"><span class="text-brand-bronze font-bold">-</span><span>3 nights, hostel accommodation</span></div>
+              <div class="flex gap-2"><span class="text-brand-bronze font-bold">-</span><span>Breakfast at hostel</span></div>
+              <div class="flex gap-2"><span class="text-brand-bronze font-bold">-</span><span>Lunch & dinner, 3 days</span></div>
+              <div class="flex gap-2"><span class="text-brand-bronze font-bold">-</span><span>In-city transportation</span></div>
+              <div class="flex gap-2"><span class="text-brand-bronze font-bold">-</span><span>Head guide per team</span></div>
+              <div class="flex gap-2"><span class="text-brand-bronze font-bold">-</span><span>Bosphorus tour</span></div>
+              <div class="flex gap-2"><span class="text-brand-bronze font-bold">-</span><span>Tournament registration & awards</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gold / Premium Pack -->
+        <div class="bg-white border border-brand-border shadow-md relative pt-10 pb-10 px-8 flex flex-col justify-between transform md:-translate-y-4">
+          <div class="absolute top-0 left-0 w-full h-1.5 bg-brand-premium"></div>
+          <div>
+            <div class="text-[10px] uppercase font-bold tracking-widest text-brand-premium mb-2">GOLD · PREMIUM PACK</div>
+            <h3 class="font-display text-4xl text-brand-h1 mb-6 uppercase tracking-wide">PREMIUM</h3>
+            
+            <div class="flex flex-col gap-3 text-sm text-brand-body font-medium">
+              <div class="flex gap-2"><span class="text-brand-premium font-bold">-</span><span>3 nights, 5-star hotel</span></div>
+              <div class="flex gap-2"><span class="text-brand-premium font-bold">-</span><span>Breakfast at hotel</span></div>
+              <div class="flex gap-2"><span class="text-brand-premium font-bold">-</span><span>Lunch & dinner, 3 days</span></div>
+              <div class="flex gap-2"><span class="text-brand-premium font-bold">-</span><span>In-city transportation</span></div>
+              <div class="flex gap-2"><span class="text-brand-premium font-bold">-</span><span>Exclusive night club & concert access</span></div>
+              <div class="flex gap-2"><span class="text-brand-premium font-bold">-</span><span>Head guide per team</span></div>
+              <div class="flex gap-2"><span class="text-brand-premium font-bold">-</span><span>Bosphorus tour</span></div>
+              <div class="flex gap-2"><span class="text-brand-premium font-bold">-</span><span>Tournament registration & awards</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Silver / Hotel Pack -->
+        <div class="bg-white border border-brand-border shadow-sm relative pt-8 pb-8 px-8 flex flex-col justify-between">
+          <div class="absolute top-0 left-0 w-full h-1.5 bg-brand-silver"></div>
+          <div>
+            <div class="text-[10px] uppercase font-bold tracking-widest text-brand-silver mb-2">SILVER · HOTEL PACK</div>
+            <h3 class="font-display text-4xl text-brand-h1 mb-6 uppercase tracking-wide">HOTEL</h3>
+            
+            <div class="flex flex-col gap-3 text-sm text-brand-body font-medium">
+              <div class="flex gap-2"><span class="text-brand-silver font-bold">-</span><span>3 nights, 3-4 star hotel</span></div>
+              <div class="flex gap-2"><span class="text-brand-silver font-bold">-</span><span>Breakfast at hotel</span></div>
+              <div class="flex gap-2"><span class="text-brand-silver font-bold">-</span><span>Lunch & dinner, 3 days</span></div>
+              <div class="flex gap-2"><span class="text-brand-silver font-bold">-</span><span>In-city transportation</span></div>
+              <div class="flex gap-2"><span class="text-brand-silver font-bold">-</span><span>Head guide per team</span></div>
+              <div class="flex gap-2"><span class="text-brand-silver font-bold">-</span><span>Bosphorus tour</span></div>
+              <div class="flex gap-2"><span class="text-brand-silver font-bold">-</span><span>Tournament registration & awards</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="mt-12 text-xs text-brand-muted font-bold max-w-3xl mx-auto text-center border-t border-brand-divider pt-6 italic">
+        *Accommodation packs do not include the participation fee.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ================= HISTORY ================= -->
+  <section id="history" class="py-24 relative">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-brand-h2 text-xs font-bold uppercase tracking-widest">Legacy Since 1896</span>
+          <h2 class="font-display text-5xl uppercase mt-3 mb-6 text-brand-h1 tracking-wide">Sports Committee History</h2>
+          <p class="text-brand-body text-sm leading-relaxed mb-4 font-medium">
+            Founded in 1896, the Boğaziçi University Sports Committee has grown into one of Europe's premier student-led sports organizations. 
+          </p>
+          <p class="text-brand-body text-sm leading-relaxed mb-6 font-medium">
+            For decades, Sports Fest has hosted tens of thousands of student-athletes worldwide on the historic South Campus overlooking the Bosphorus Strait.
+          </p>
+          <a href="https://www.sportscommittee.com" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center gap-2 text-brand-h2 font-bold text-sm hover:text-brand-accent transition-colors">
+            Visit the Sports Committee Website <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+        
+        <div class="sharp-card p-8 relative">
+          <div class="font-display text-6xl text-brand-h1 absolute top-4 right-6 opacity-30 pointer-events-none">1896</div>
+          <h3 class="font-display text-3xl mb-4 text-brand-h1 tracking-wide relative z-10">The Festival Timeline</h3>
+          <ul class="space-y-4 text-sm text-brand-body font-medium relative z-10">
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-none bg-brand-accent mt-1.5 flex-shrink-0"></span>
+              <span><strong class="text-brand-h1">1896:</strong> Official founding of the Boğaziçi Sports Committee.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-none bg-brand-accent mt-1.5 flex-shrink-0"></span>
+              <span><strong class="text-brand-h1">1980:</strong> The first official Sports Fest organized by the Sports Committee, expanding beyond borders to welcome universities across Europe.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-none bg-brand-accent mt-1.5 flex-shrink-0"></span>
+              <span><strong class="text-brand-h1">Today:</strong> Hosting over 1,000+ athletes annually across 12 disciplines.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ISTANBUL EXPERIENCE ================= -->
+  <section id="istanbul" class="py-24 bg-brand-bg_secondary border-y border-brand-divider z-10 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-brand-h2 text-xs font-bold uppercase tracking-widest">Explore The City Of Empires</span>
+        <h2 class="font-display text-5xl md:text-6xl uppercase mt-3 text-brand-h1 tracking-wide">The Istanbul Experience</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
+          <div class="h-48 overflow-hidden bg-brand-divider">
+            <img src="ferrytour.jpg" alt="Bosphorus Ferry Tour" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
+          </div>
+          <div class="p-6 border-t border-brand-border">
+            <h3 class="font-display text-2xl mb-2 text-brand-h1 tracking-wide">Bosphorus Ferry Tour</h3>
+            <p class="text-xs text-brand-body font-medium">Sail between Europe and Asia on our official private Bosphorus cruise, exclusively for festival participants.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
+          <div class="h-48 overflow-hidden bg-brand-divider">
+            <img src="southcampus.png" alt="Historic South Campus" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
+          </div>
+          <div class="p-6 border-t border-brand-border">
+            <h3 class="font-display text-2xl mb-2 text-brand-h1 tracking-wide">Historic South Campus</h3>
+            <p class="text-xs text-brand-body font-medium">Compete on a historic campus founded in 1863, offering breathtaking views over the Bosphorus strait.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
+          <div class="h-48 overflow-hidden bg-brand-divider">
+            <img src="nightsbysk.png" alt="Istanbul Nightlife" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
+          </div>
+          <div class="p-6 border-t border-brand-border">
+            <h3 class="font-display text-2xl mb-2 text-brand-h1 tracking-wide">Unforgettable Nightlife</h3>
+            <p class="text-xs text-brand-body font-medium">Exclusive access to premier nightclubs and official festival social events throughout the festival.</p>
+          </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
+          <div class="h-48 overflow-hidden bg-brand-divider">
+            <img src="turkishfood.png" alt="Turkish Food" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
+          </div>
+          <div class="p-6 border-t border-brand-border">
+            <h3 class="font-display text-2xl mb-2 text-brand-h1 tracking-wide">Turkish Food</h3>
+            <p class="text-xs text-brand-body font-medium">Experience the rich culinary heritage of Istanbul with authentic local delicacies and global flavors.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
+          <div class="h-48 overflow-hidden bg-brand-divider">
+            <img src="placestovisit.png" alt="Places to Visit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
+          </div>
+          <div class="p-6 border-t border-brand-border">
+            <h3 class="font-display text-2xl mb-2 text-brand-h1 tracking-wide">Places to Visit</h3>
+            <p class="text-xs text-brand-body font-medium">Discover ancient monuments, historical palaces, and the cultural centers spanning two continents.</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
+          <div class="h-48 overflow-hidden bg-brand-divider">
+            <img src="istanbulcats.png" alt="Istanbul Cats" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
+          </div>
+          <div class="p-6 border-t border-brand-border">
+            <h3 class="font-display text-2xl mb-2 text-brand-h1 tracking-wide">Istanbul Cats</h3>
+            <p class="text-xs text-brand-body font-medium">Meet the famous four-legged residents of the city and campus who have captured hearts worldwide.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PAST PARTICIPANTS ================= -->
+  <section class="py-20 relative z-10">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="font-display text-4xl uppercase mb-4 text-brand-h1 tracking-wide">Past Participants & Global Community</h2>
+      <p class="text-brand-body text-sm max-w-xl mx-auto mb-10 font-medium">
+        Connecting universities through sport, culture, and competition since 1980.
+      </p>
+
+      <a href="gallery-legacy.html" class="inline-block sharp-card p-8 border-l-4 border-l-brand-accent hover:border-brand-accent transition-all max-w-xl mx-auto group cursor-pointer">
+        <div class="w-16 h-16 bg-brand-card border border-brand-border flex items-center justify-center text-brand-h2 text-2xl mx-auto mb-4 group-hover:text-brand-accent transition-colors">
+          <i class="fa-solid fa-photo-film"></i>
+        </div>
+        <h3 class="font-display text-3xl text-brand-h1 mb-2 tracking-wide">Explore Years of Sports Fest</h3>
+        <p class="text-xs text-brand-body mb-4 font-medium">Discover the universities, athletes, and memories that shaped Sports Fest.</p>
+        <span class="text-xs font-bold text-brand-accent uppercase tracking-wider inline-flex items-center gap-2 group-hover:text-brand-h2 transition-colors">
+          View Legacy Page <i class="fa-solid fa-arrow-right"></i>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-brand-dark pt-16 pb-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+      
+      <div class="max-w-lg mx-auto mb-8">
+        <h4 class="font-display text-2xl tracking-wider mb-2 text-white">BOĞAZİÇİ UNIVERSITY SPORTS FEST</h4>
+        <p class="text-xs text-brand-footer_text mb-4 font-medium">Organized by Boğaziçi University Sports Committee</p>
+        <div class="flex justify-center gap-6 text-sm font-semibold text-brand-footer_text">
+          <a href="https://www.sportscommittee.com" target="_blank" class="hover:text-brand-accent transition-colors">Sports Committee Website</a>
+          <span class="opacity-50">•</span>
+          <a href="mailto:info@bogazicisportsfest.com" class="hover:text-brand-accent transition-colors">info@bogazicisportsfest.com</a>
+        </div>
+
+        <div class="flex justify-center gap-4 mt-6">
+          <a href="https://www.youtube.com/@SportsCommittee1896" target="_blank" class="w-10 h-10 rounded-none bg-brand-card/5 border border-white/20 flex items-center justify-center text-white hover:bg-brand-card hover:text-brand-dark hover:border-brand-card transition-all">
+            <i class="fa-brands fa-youtube text-lg"></i>
+          </a>
+          <a href="https://www.instagram.com/sportsfest/" target="_blank" class="w-10 h-10 rounded-none bg-brand-card/5 border border-white/20 flex items-center justify-center text-white hover:bg-brand-card hover:text-brand-dark hover:border-brand-card transition-all">
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="my-8 flex flex-col items-center justify-center">
+        <div class="w-48 h-48 md:w-64 md:h-64 rounded-xl border border-white/10 flex items-center justify-center bg-brand-dark overflow-hidden p-1 shadow-lg">
+          <video autoplay loop muted playsinline controlslist="nodownload" class="w-full h-full object-cover rounded-xl">
+            <source src="./torch-animation.mp4" type="video/mp4">
+          </video>
+        </div>
+        <span class="text-[11px] font-bold text-white tracking-widest uppercase mt-5 block">The Festival Flame Keeps Burning</span>
+      </div>
+
+      <div class="text-xs text-brand-footer_text border-t border-white/10 pt-8 mt-6">
+        © 2027 Boğaziçi University Sports Committee. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
