@@ -109,7 +109,6 @@
     function toggleYear(year) {
       const content = document.getElementById('content-' + year);
       const icon = document.getElementById('icon-' + year);
-      
       if (content.classList.contains('hidden')) {
         content.classList.remove('hidden');
         icon.classList.remove('fa-plus');
@@ -131,8 +130,12 @@
       const modal = document.getElementById('modal-participants-' + year);
       if (modal.classList.contains('hidden')) {
         modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
       } else {
         modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
       }
     }
 
@@ -218,7 +221,6 @@
         <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="hidden sm:block px-5 py-2.5 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-h2 transition-all rounded-none shadow-sm">
           Apply Now!
         </a>
-        <!-- Mobile Menu Button -->
         <button onclick="toggleMobileMenu()" class="lg:hidden text-brand-dark text-2xl focus:outline-none p-2 ml-2">
           <i id="mobile-menu-icon" class="fa-solid fa-bars"></i>
         </button>
@@ -262,51 +264,8 @@
           <i class="fa-solid fa-chevron-left"></i>
         </button>
         
-        <div class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2">
-          <!-- First 3 images load instantly (NO lazy loading) -->
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/1.jpg" srcset="highlights/1-thumb.jpg 400w, highlights/1.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/1.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 1" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/2.jpg" srcset="highlights/2-thumb.jpg 400w, highlights/2.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/2.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 2" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/3.jpg" srcset="highlights/3-thumb.jpg 400w, highlights/3.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/3.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 3" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" decoding="async"></div>
-          
-          <!-- Rest of the Highlights are Lazy Loaded -->
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/4.jpg" srcset="highlights/4-thumb.jpg 400w, highlights/4.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/4.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 4" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/5.jpg" srcset="highlights/5-thumb.jpg 400w, highlights/5.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/5.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 5" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/6.jpg" srcset="highlights/6-thumb.jpg 400w, highlights/6.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/6.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 6" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/7.jpg" srcset="highlights/7-thumb.jpg 400w, highlights/7.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/7.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 7" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/8.jpg" srcset="highlights/8-thumb.jpg 400w, highlights/8.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/8.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 8" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/9.jpg" srcset="highlights/9-thumb.jpg 400w, highlights/9.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/9.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 9" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/10.jpg" srcset="highlights/10-thumb.jpg 400w, highlights/10.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/10.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 10" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/11.jpg" srcset="highlights/11-thumb.jpg 400w, highlights/11.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/11.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 11" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/12.jpg" srcset="highlights/12-thumb.jpg 400w, highlights/12.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/12.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 12" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/13.jpg" srcset="highlights/13-thumb.jpg 400w, highlights/13.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/13.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 13" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/14.jpg" srcset="highlights/14-thumb.jpg 400w, highlights/14.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/14.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 14" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/15.jpg" srcset="highlights/15-thumb.jpg 400w, highlights/15.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/15.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 15" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/16.jpg" srcset="highlights/16-thumb.jpg 400w, highlights/16.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/16.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 16" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/17.jpg" srcset="highlights/17-thumb.jpg 400w, highlights/17.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/17.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 17" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/18.jpg" srcset="highlights/18-thumb.jpg 400w, highlights/18.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/18.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 18" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/19.jpg" srcset="highlights/19-thumb.jpg 400w, highlights/19.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/19.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 19" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/20.jpg" srcset="highlights/20-thumb.jpg 400w, highlights/20.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="20.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 20" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/21.jpg" srcset="highlights/21-thumb.jpg 400w, highlights/21.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/21.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 21" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/22.jpg" srcset="highlights/22-thumb.jpg 400w, highlights/22.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/22.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 22" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/23.jpg" srcset="highlights/23-thumb.jpg 400w, highlights/23.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/23.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 23" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/24.jpg" srcset="highlights/24-thumb.jpg 400w, highlights/24.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/24.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 24" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/25.jpg" srcset="highlights/25-thumb.jpg 400w, highlights/25.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/25.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 25" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/26.jpg" srcset="highlights/26-thumb.jpg 400w, highlights/26.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/26.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 26" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/27.jpg" srcset="highlights/27-thumb.jpg 400w, highlights/27.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/27.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 27" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/28.jpg" srcset="highlights/28-thumb.jpg 400w, highlights/28.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/28.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 28" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/29.jpg" srcset="highlights/29-thumb.jpg 400w, highlights/29.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/29.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 29" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/30.jpg" srcset="highlights/30-thumb.jpg 400w, highlights/30.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/30.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 30" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/31.jpg" srcset="highlights/31-thumb.jpg 400w, highlights/31.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/31.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 31" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/32.jpg" srcset="highlights/32-thumb.jpg 400w, highlights/32.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/32.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 32" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/33.jpg" srcset="highlights/33-thumb.jpg 400w, highlights/33.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/33.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 33" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/34.jpg" srcset="highlights/34-thumb.jpg 400w, highlights/34.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/34.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 34" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/35.jpg" srcset="highlights/35-thumb.jpg 400w, highlights/35.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/35.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 35" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/36.jpg" srcset="highlights/36-thumb.jpg 400w, highlights/36.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/36.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 36" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/37.jpg" srcset="highlights/37-thumb.jpg 400w, highlights/37.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/37.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 37" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/38.jpg" srcset="highlights/38-thumb.jpg 400w, highlights/38.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/38.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 38" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/39.jpg" srcset="highlights/39-thumb.jpg 400w, highlights/39.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/39.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 39" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="highlights/40.jpg" srcset="highlights/40-thumb.jpg 400w, highlights/40.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="highlights/40.jpg" onclick="openLightbox(this.dataset.full)" alt="Highlight 40" class="w-full h-64 object-cover group-hover/img:scale-105 transition-transform duration-500 cursor-pointer bg-brand-divider" loading="lazy" decoding="async"></div>
-        </div>
+        <!-- Generated Dynamically by JS -->
+        <div id="carousel-highlights" class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2"></div>
 
         <button onclick="scrollCarousel(this, 1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-10 h-10 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
           <i class="fa-solid fa-chevron-right"></i>
@@ -336,54 +295,7 @@
             <button onclick="scrollCarousel(this, -1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-left text-xs"></i>
             </button>
-            <div class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2">
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/1.jpeg" srcset="2026/1-thumb.jpeg 400w, 2026/1.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/1.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/2.jpeg" srcset="2026/2-thumb.jpeg 400w, 2026/2.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/2.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/3.jpeg" srcset="2026/3-thumb.jpeg 400w, 2026/3.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/3.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/4.jpeg" srcset="2026/4-thumb.jpeg 400w, 2026/4.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/4.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/5.jpeg" srcset="2026/5-thumb.jpeg 400w, 2026/5.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/5.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/6.jpeg" srcset="2026/6-thumb.jpeg 400w, 2026/6.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/6.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/7.jpeg" srcset="2026/7-thumb.jpeg 400w, 2026/7.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/7.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/8.jpeg" srcset="2026/8-thumb.jpeg 400w, 2026/8.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/8.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/9.jpeg" srcset="2026/9-thumb.jpeg 400w, 2026/9.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/9.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/10.jpeg" srcset="2026/10-thumb.jpeg 400w, 2026/10.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/10.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/11.jpg" srcset="2026/11-thumb.jpg 400w, 2026/11.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/11.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/12.jpg" srcset="2026/12-thumb.jpg 400w, 2026/12.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/12.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/13.jpg" srcset="2026/13-thumb.jpg 400w, 2026/13.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/13.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/14.jpg" srcset="2026/14-thumb.jpg 400w, 2026/14.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/14.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/15.jpg" srcset="2026/15-thumb.jpg 400w, 2026/15.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/15.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/16.jpg" srcset="2026/16-thumb.jpg 400w, 2026/16.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/16.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/17.jpg" srcset="2026/17-thumb.jpg 400w, 2026/17.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/17.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/18.jpg" srcset="2026/18-thumb.jpg 400w, 2026/18.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/18.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/19.jpg" srcset="2026/19-thumb.jpg 400w, 2026/19.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/19.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/20.jpg" srcset="2026/20-thumb.jpg 400w, 2026/20.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/20.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/21.jpg" srcset="2026/21-thumb.jpg 400w, 2026/21.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/21.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/22.jpg" srcset="2026/22-thumb.jpg 400w, 2026/22.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/22.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/23.jpg" srcset="2026/23-thumb.jpg 400w, 2026/23.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/23.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/24.jpg" srcset="2026/24-thumb.jpg 400w, 2026/24.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/24.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/25.jpg" srcset="2026/25-thumb.jpg 400w, 2026/25.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/25.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/26.jpg" srcset="2026/26-thumb.jpg 400w, 2026/26.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/26.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/27.jpg" srcset="2026/27-thumb.jpg 400w, 2026/27.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/27.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/28.jpg" srcset="2026/28-thumb.jpg 400w, 2026/28.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/28.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/29.jpg" srcset="2026/29-thumb.jpg 400w, 2026/29.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/29.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/30.jpg" srcset="2026/30-thumb.jpg 400w, 2026/30.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/30.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/31.jpg" srcset="2026/31-thumb.jpg 400w, 2026/31.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/31.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/32.jpg" srcset="2026/32-thumb.jpg 400w, 2026/32.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/32.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/33.jpg" srcset="2026/33-thumb.jpg 400w, 2026/33.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/33.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/34.jpg" srcset="2026/34-thumb.jpg 400w, 2026/34.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/34.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/35.jpg" srcset="2026/35-thumb.jpg 400w, 2026/35.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/35.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/36.jpg" srcset="2026/36-thumb.jpg 400w, 2026/36.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/36.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/37.jpg" srcset="2026/37-thumb.jpg 400w, 2026/37.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/37.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/38.jpg" srcset="2026/38-thumb.jpg 400w, 2026/38.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/38.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/39.jpg" srcset="2026/39-thumb.jpg 400w, 2026/39.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/39.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/40.jpg" srcset="2026/40-thumb.jpg 400w, 2026/40.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/40.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/41.jpg" srcset="2026/41-thumb.jpg 400w, 2026/41.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/41.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/42.jpg" srcset="2026/42-thumb.jpg 400w, 2026/42.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/42.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/43.jpg" srcset="2026/43-thumb.jpg 400w, 2026/43.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/43.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/44.jpg" srcset="2026/44-thumb.jpg 400w, 2026/44.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/44.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/45.jpg" srcset="2026/45-thumb.jpg 400w, 2026/45.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/45.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2026/46.jpg" srcset="2026/46-thumb.jpg 400w, 2026/46.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2026/46.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2026" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-            </div>
+            <div id="carousel-2026" class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2"></div>
             <button onclick="scrollCarousel(this, 1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-right text-xs"></i>
             </button>
@@ -410,41 +322,7 @@
             <button onclick="scrollCarousel(this, -1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-left text-xs"></i>
             </button>
-            <div class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2">
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/1.jpeg" srcset="2025/1-thumb.jpeg 400w, 2025/1.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/1.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/2.jpeg" srcset="2025/2-thumb.jpeg 400w, 2025/2.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/2.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/3.jpeg" srcset="2025/3-thumb.jpeg 400w, 2025/3.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/3.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/4.jpeg" srcset="2025/4-thumb.jpeg 400w, 2025/4.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/4.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/5.jpeg" srcset="2025/5-thumb.jpeg 400w, 2025/5.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/5.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/6.jpeg" srcset="2025/6-thumb.jpeg 400w, 2025/6.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/6.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/7.jpeg" srcset="2025/7-thumb.jpeg 400w, 2025/7.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/7.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/8.jpeg" srcset="2025/8-thumb.jpeg 400w, 2025/8.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/8.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/9.jpeg" srcset="2025/9-thumb.jpeg 400w, 2025/9.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/9.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/10.jpeg" srcset="2025/10-thumb.jpeg 400w, 2025/10.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/10.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/11.jpeg" srcset="2025/11-thumb.jpeg 400w, 2025/11.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/11.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/12.jpeg" srcset="2025/12-thumb.jpeg 400w, 2025/12.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/12.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/13.jpeg" srcset="2025/13-thumb.jpeg 400w, 2025/13.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/13.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/14.jpeg" srcset="2025/14-thumb.jpeg 400w, 2025/14.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/14.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/15.jpeg" srcset="2025/15-thumb.jpeg 400w, 2025/15.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/15.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/16.jpeg" srcset="2025/16-thumb.jpeg 400w, 2025/16.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/16.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/17.jpeg" srcset="2025/17-thumb.jpeg 400w, 2025/17.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/17.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/18.jpeg" srcset="2025/18-thumb.jpeg 400w, 2025/18.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/18.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/19.jpeg" srcset="2025/19-thumb.jpeg 400w, 2025/19.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/19.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/20.jpeg" srcset="2025/20-thumb.jpeg 400w, 2025/20.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/20.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/21.jpeg" srcset="2025/21-thumb.jpeg 400w, 2025/21.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/21.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/22.jpeg" srcset="2025/22-thumb.jpeg 400w, 2025/22.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/22.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/23.jpeg" srcset="2025/23-thumb.jpeg 400w, 2025/23.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/23.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/24.jpeg" srcset="2025/24-thumb.jpeg 400w, 2025/24.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/24.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/25.jpeg" srcset="2025/25-thumb.jpeg 400w, 2025/25.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/25.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/26.jpeg" srcset="2025/26-thumb.jpeg 400w, 2025/26.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/26.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/27.jpeg" srcset="2025/27-thumb.jpeg 400w, 2025/27.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/27.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/28.jpeg" srcset="2025/28-thumb.jpeg 400w, 2025/28.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/28.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/29.jpeg" srcset="2025/29-thumb.jpeg 400w, 2025/29.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/29.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/30.jpeg" srcset="2025/30-thumb.jpeg 400w, 2025/30.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/30.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/31.jpeg" srcset="2025/31-thumb.jpeg 400w, 2025/31.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/31.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/32.jpeg" srcset="2025/32-thumb.jpeg 400w, 2025/32.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/32.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2025/33.jpeg" srcset="2025/33-thumb.jpeg 400w, 2025/33.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2025/33.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2025" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-            </div>
+            <div id="carousel-2025" class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2"></div>
             <button onclick="scrollCarousel(this, 1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-right text-xs"></i>
             </button>
@@ -471,37 +349,7 @@
             <button onclick="scrollCarousel(this, -1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-left text-xs"></i>
             </button>
-            <div class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2">
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/1.jpg" srcset="2024/1-thumb.jpg 400w, 2024/1.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/1.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/2.jpg" srcset="2024/2-thumb.jpg 400w, 2024/2.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/2.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/3.jpg" srcset="2024/3-thumb.jpg 400w, 2024/3.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/3.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/4.jpg" srcset="2024/4-thumb.jpg 400w, 2024/4.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/4.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/5.jpg" srcset="2024/5-thumb.jpg 400w, 2024/5.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/5.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/6.jpg" srcset="2024/6-thumb.jpg 400w, 2024/6.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/6.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/7.jpg" srcset="2024/7-thumb.jpg 400w, 2024/7.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/7.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/8.jpg" srcset="2024/8-thumb.jpg 400w, 2024/8.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/8.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/9.jpg" srcset="2024/9-thumb.jpg 400w, 2024/9.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/9.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/10.jpg" srcset="2024/10-thumb.jpg 400w, 2024/10.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/10.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/11.jpg" srcset="2024/11-thumb.jpg 400w, 2024/11.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/11.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/12.jpg" srcset="2024/12-thumb.jpg 400w, 2024/12.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/12.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/13.jpg" srcset="2024/13-thumb.jpg 400w, 2024/13.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/13.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/14.jpg" srcset="2024/14-thumb.jpg 400w, 2024/14.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/14.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/15.jpg" srcset="2024/15-thumb.jpg 400w, 2024/15.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/15.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/16.jpg" srcset="2024/16-thumb.jpg 400w, 2024/16.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/16.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/17.jpg" srcset="2024/17-thumb.jpg 400w, 2024/17.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/17.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/18.jpg" srcset="2024/18-thumb.jpg 400w, 2024/18.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/18.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/19.jpg" srcset="2024/19-thumb.jpg 400w, 2024/19.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/19.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/20.jpg" srcset="2024/20-thumb.jpg 400w, 2024/20.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/20.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/21.jpg" srcset="2024/21-thumb.jpg 400w, 2024/21.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/21.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/22.jpg" srcset="2024/22-thumb.jpg 400w, 2024/22.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/22.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/23.jpg" srcset="2024/23-thumb.jpg 400w, 2024/23.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/23.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/24.jpg" srcset="2024/24-thumb.jpg 400w, 2024/24.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/24.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/25.jpg" srcset="2024/25-thumb.jpg 400w, 2024/25.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/25.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/26.jpg" srcset="2024/26-thumb.jpg 400w, 2024/26.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/26.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/27.jpg" srcset="2024/27-thumb.jpg 400w, 2024/27.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/27.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/28.jpg" srcset="2024/28-thumb.jpg 400w, 2024/28.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/28.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2024/29.jpg" srcset="2024/29-thumb.jpg 400w, 2024/29.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2024/29.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2024" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-            </div>
+            <div id="carousel-2024" class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2"></div>
             <button onclick="scrollCarousel(this, 1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-right text-xs"></i>
             </button>
@@ -528,23 +376,7 @@
             <button onclick="scrollCarousel(this, -1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-left text-xs"></i>
             </button>
-            <div class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2">
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/1.jpg" srcset="2023/1-thumb.jpg 400w, 2023/1.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/1.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/2.jpg" srcset="2023/2-thumb.jpg 400w, 2023/2.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/2.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/3.jpg" srcset="2023/3-thumb.jpg 400w, 2023/3.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/3.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/4.jpg" srcset="2023/4-thumb.jpg 400w, 2023/4.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/4.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/5.jpg" srcset="2023/5-thumb.jpg 400w, 2023/5.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/5.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/6.jpg" srcset="2023/6-thumb.jpg 400w, 2023/6.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/6.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/7.jpg" srcset="2023/7-thumb.jpg 400w, 2023/7.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/7.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/8.jpg" srcset="2023/8-thumb.jpg 400w, 2023/8.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/8.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/9.jpg" srcset="2023/9-thumb.jpg 400w, 2023/9.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/9.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/10.jpg" srcset="2023/10-thumb.jpg 400w, 2023/10.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/10.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/11.jpg" srcset="2023/11-thumb.jpg 400w, 2023/11.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/11.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/12.jpg" srcset="2023/12-thumb.jpg 400w, 2023/12.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/12.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/13.jpg" srcset="2023/13-thumb.jpg 400w, 2023/13.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/13.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/14.jpg" srcset="2023/14-thumb.jpg 400w, 2023/14.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/14.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2023/15.jpg" srcset="2023/15-thumb.jpg 400w, 2023/15.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2023/15.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2023" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-            </div>
+            <div id="carousel-2023" class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2"></div>
             <button onclick="scrollCarousel(this, 1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-right text-xs"></i>
             </button>
@@ -571,37 +403,7 @@
             <button onclick="scrollCarousel(this, -1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-left text-xs"></i>
             </button>
-            <div class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2">
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/1.jpeg" srcset="2022/1-thumb.jpeg 400w, 2022/1.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/1.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/2.jpeg" srcset="2022/2-thumb.jpeg 400w, 2022/2.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/2.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/3.jpeg" srcset="2022/3-thumb.jpeg 400w, 2022/3.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/3.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/4.jpeg" srcset="2022/4-thumb.jpeg 400w, 2022/4.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/4.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/5.jpeg" srcset="2022/5-thumb.jpeg 400w, 2022/5.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/5.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/6.jpeg" srcset="2022/6-thumb.jpeg 400w, 2022/6.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/6.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/7.jpeg" srcset="2022/7-thumb.jpeg 400w, 2022/7.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/7.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/8.jpeg" srcset="2022/8-thumb.jpeg 400w, 2022/8.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/8.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/9.jpeg" srcset="2022/9-thumb.jpeg 400w, 2022/9.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/9.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/10.jpeg" srcset="2022/10-thumb.jpeg 400w, 2022/10.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/10.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/11.jpeg" srcset="2022/11-thumb.jpeg 400w, 2022/11.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/11.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/12.jpeg" srcset="2022/12-thumb.jpeg 400w, 2022/12.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/12.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/13.jpeg" srcset="2022/13-thumb.jpeg 400w, 2022/13.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/13.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/14.jpeg" srcset="2022/14-thumb.jpeg 400w, 2022/14.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/14.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/15.jpeg" srcset="2022/15-thumb.jpeg 400w, 2022/15.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/15.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/16.jpeg" srcset="2022/16-thumb.jpeg 400w, 2022/16.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/16.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/17.jpeg" srcset="2022/17-thumb.jpeg 400w, 2022/17.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/17.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/18.jpeg" srcset="2022/18-thumb.jpeg 400w, 2022/18.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/18.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/19.jpeg" srcset="2022/19-thumb.jpeg 400w, 2022/19.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/19.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/20.jpeg" srcset="2022/20-thumb.jpeg 400w, 2022/20.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/20.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/21.jpeg" srcset="2022/21-thumb.jpeg 400w, 2022/21.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/21.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/22.jpeg" srcset="2022/22-thumb.jpeg 400w, 2022/22.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/22.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/23.jpeg" srcset="2022/23-thumb.jpeg 400w, 2022/23.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/23.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/24.jpeg" srcset="2022/24-thumb.jpeg 400w, 2022/24.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/24.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/25.jpeg" srcset="2022/25-thumb.jpeg 400w, 2022/25.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/25.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/26.jpeg" srcset="2022/26-thumb.jpeg 400w, 2022/26.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/26.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/27.jpeg" srcset="2022/27-thumb.jpeg 400w, 2022/27.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/27.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/28.jpeg" srcset="2022/28-thumb.jpeg 400w, 2022/28.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/28.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2022/29.jpeg" srcset="2022/29-thumb.jpeg 400w, 2022/29.jpeg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2022/29.jpeg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2022" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-            </div>
+            <div id="carousel-2022" class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2"></div>
             <button onclick="scrollCarousel(this, 1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-right text-xs"></i>
             </button>
@@ -628,23 +430,7 @@
             <button onclick="scrollCarousel(this, -1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-left text-xs"></i>
             </button>
-            <div class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2">
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/1.jpg" srcset="2021/1-thumb.jpg 400w, 2021/1.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/1.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/2.jpg" srcset="2021/2-thumb.jpg 400w, 2021/2.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/2.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/3.jpg" srcset="2021/3-thumb.jpg 400w, 2021/3.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/3.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/4.jpg" srcset="2021/4-thumb.jpg 400w, 2021/4.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/4.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/5.jpg" srcset="2021/5-thumb.jpg 400w, 2021/5.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/5.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/6.jpg" srcset="2021/6-thumb.jpg 400w, 2021/6.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/6.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/7.jpg" srcset="2021/7-thumb.jpg 400w, 2021/7.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/7.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/8.jpg" srcset="2021/8-thumb.jpg 400w, 2021/8.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/8.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/9.jpg" srcset="2021/9-thumb.jpg 400w, 2021/9.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/9.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/10.jpg" srcset="2021/10-thumb.jpg 400w, 2021/10.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/10.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/11.jpg" srcset="2021/11-thumb.jpg 400w, 2021/11.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/11.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/12.jpg" srcset="2021/12-thumb.jpg 400w, 2021/12.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/12.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/13.jpg" srcset="2021/13-thumb.jpg 400w, 2021/13.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/13.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/14.jpg" srcset="2021/14-thumb.jpg 400w, 2021/14.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/14.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2021/15.jpg" srcset="2021/15-thumb.jpg 400w, 2021/15.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2021/15.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2021" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-            </div>
+            <div id="carousel-2021" class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2"></div>
             <button onclick="scrollCarousel(this, 1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-right text-xs"></i>
             </button>
@@ -684,23 +470,7 @@
             <button onclick="scrollCarousel(this, -1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-left text-xs"></i>
             </button>
-            <div class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2">
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/1.jpg" srcset="2019/1-thumb.jpg 400w, 2019/1.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/1.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/2.jpg" srcset="2019/2-thumb.jpg 400w, 2019/2.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/2.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/3.jpg" srcset="2019/3-thumb.jpg 400w, 2019/3.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/3.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/4.jpg" srcset="2019/4-thumb.jpg 400w, 2019/4.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/4.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/5.jpg" srcset="2019/5-thumb.jpg 400w, 2019/5.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/5.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/6.jpg" srcset="2019/6-thumb.jpg 400w, 2019/6.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/6.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/7.jpg" srcset="2019/7-thumb.jpg 400w, 2019/7.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/7.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/8.jpg" srcset="2019/8-thumb.jpg 400w, 2019/8.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/8.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/9.jpg" srcset="2019/9-thumb.jpg 400w, 2019/9.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/9.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/10.jpg" srcset="2019/10-thumb.jpg 400w, 2019/10.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/10.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/11.jpg" srcset="2019/11-thumb.jpg 400w, 2019/11.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/11.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/12.jpg" srcset="2019/12-thumb.jpg 400w, 2019/12.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/12.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/13.jpg" srcset="2019/13-thumb.jpg 400w, 2019/13.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/13.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/14.jpg" srcset="2019/14-thumb.jpg 400w, 2019/14.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/14.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2019/15.jpg" srcset="2019/15-thumb.jpg 400w, 2019/15.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2019/15.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2019" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-            </div>
+            <div id="carousel-2019" class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2"></div>
             <button onclick="scrollCarousel(this, 1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-right text-xs"></i>
             </button>
@@ -727,23 +497,7 @@
             <button onclick="scrollCarousel(this, -1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-left text-xs"></i>
             </button>
-            <div class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2">
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/1.jpg" srcset="2018/1-thumb.jpg 400w, 2018/1.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/1.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/2.jpg" srcset="2018/2-thumb.jpg 400w, 2018/2.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/2.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/3.jpg" srcset="2018/3-thumb.jpg 400w, 2018/3.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/3.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/4.jpg" srcset="2018/4-thumb.jpg 400w, 2018/4.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/4.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/5.jpg" srcset="2018/5-thumb.jpg 400w, 2018/5.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/5.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/6.jpg" srcset="2018/6-thumb.jpg 400w, 2018/6.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/6.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/7.jpg" srcset="2018/7-thumb.jpg 400w, 2018/7.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/7.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/8.jpg" srcset="2018/8-thumb.jpg 400w, 2018/8.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/8.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/9.jpg" srcset="2018/9-thumb.jpg 400w, 2018/9.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/9.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/10.jpg" srcset="2018/10-thumb.jpg 400w, 2018/10.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/10.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/11.jpg" srcset="2018/11-thumb.jpg 400w, 2018/11.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/11.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/12.jpg" srcset="2018/12-thumb.jpg 400w, 2018/12.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/12.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/13.jpg" srcset="2018/13-thumb.jpg 400w, 2018/13.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/13.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/14.jpg" srcset="2018/14-thumb.jpg 400w, 2018/14.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/14.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2018/15.jpg" srcset="2018/15-thumb.jpg 400w, 2018/15.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2018/15.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2018" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-            </div>
+            <div id="carousel-2018" class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2"></div>
             <button onclick="scrollCarousel(this, 1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-right text-xs"></i>
             </button>
@@ -767,23 +521,7 @@
             <button onclick="scrollCarousel(this, -1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-left text-xs"></i>
             </button>
-            <div class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2">
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/1.jpg" srcset="2017/1-thumb.jpg 400w, 2017/1.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/1.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/2.jpg" srcset="2017/2-thumb.jpg 400w, 2017/2.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/2.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/3.jpg" srcset="2017/3-thumb.jpg 400w, 2017/3.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/3.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/4.jpg" srcset="2017/4-thumb.jpg 400w, 2017/4.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/4.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/5.jpg" srcset="2017/5-thumb.jpg 400w, 2017/5.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/5.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/6.jpg" srcset="2017/6-thumb.jpg 400w, 2017/6.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/6.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/7.jpg" srcset="2017/7-thumb.jpg 400w, 2017/7.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/7.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/8.jpg" srcset="2017/8-thumb.jpg 400w, 2017/8.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/8.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/9.jpg" srcset="2017/9-thumb.jpg 400w, 2017/9.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/9.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/10.jpg" srcset="2017/10-thumb.jpg 400w, 2017/10.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/10.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/11.jpg" srcset="2017/11-thumb.jpg 400w, 2017/11.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/11.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/12.jpg" srcset="2017/12-thumb.jpg 400w, 2017/12.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/12.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/13.jpg" srcset="2017/13-thumb.jpg 400w, 2017/13.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/13.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/14.jpg" srcset="2017/14-thumb.jpg 400w, 2017/14.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/14.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="2017/15.jpg" srcset="2017/15-thumb.jpg 400w, 2017/15.jpg 1080w" sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" data-full="2017/15.jpg" onclick="openLightbox(this.dataset.full)" alt="Gallery 2017" class="w-full h-56 object-cover group-hover/img:scale-105 transition-transform bg-brand-divider cursor-pointer" loading="lazy" decoding="async"></div>
-            </div>
+            <div id="carousel-2017" class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2"></div>
             <button onclick="scrollCarousel(this, 1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-right text-xs"></i>
             </button>
@@ -810,5 +548,655 @@
             <button onclick="scrollCarousel(this, -1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
               <i class="fa-solid fa-chevron-left text-xs"></i>
             </button>
-            <div class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2">
-              <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img"><img src="I encountered an error doing what you asked. Could you try again?
+            <div id="carousel-2016" class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2"></div>
+            <button onclick="scrollCarousel(this, 1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
+              <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2015 -->
+      <div class="sharp-card border-l-4 border-l-brand-accent transition-all duration-300">
+        <button onclick="toggleYear('2015')" class="w-full p-6 flex justify-between items-center text-left hover:bg-brand-bg_secondary transition-colors">
+          <span class="font-display text-3xl text-brand-h1 tracking-wide">2015</span>
+          <i id="icon-2015" class="fa-solid fa-plus text-brand-accent text-xl"></i>
+        </button>
+        <div id="content-2015" class="hidden p-6 border-t border-brand-divider bg-white">
+          <div class="mb-8 flex justify-center gap-4 flex-wrap">
+            <button onclick="toggleParticipants('2015')" class="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-brand-dark text-brand-dark font-bold uppercase tracking-widest text-sm hover:bg-brand-dark hover:text-white transition-all shadow-md">
+              <i class="fa-solid fa-list-ul"></i> Participants
+            </button>
+            <a href="https://youtu.be/H69dCRoYNy4?si=XFcEbmtn8hR4zPoo" target="_blank" class="inline-flex items-center gap-3 px-8 py-3 rounded-full bg-brand-accent text-white font-bold uppercase tracking-widest text-sm hover:bg-brand-dark transition-all shadow-md">
+              <i class="fa-brands fa-youtube text-lg"></i> Watch The Aftermovie!
+            </a>
+          </div>
+          <div class="relative group w-full px-6">
+            <button onclick="scrollCarousel(this, -1)" class="absolute left-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
+              <i class="fa-solid fa-chevron-left text-xs"></i>
+            </button>
+            <div id="carousel-2015" class="carousel-container flex overflow-x-auto hide-scrollbar gap-4 py-2"></div>
+            <button onclick="scrollCarousel(this, 1)" class="absolute right-0 top-1/2 -translate-y-1/2 bg-brand-dark text-white w-8 h-8 rounded-full flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 shadow">
+              <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2014 and Before (Info Block) -->
+      <div class="sharp-card border-l-4 border-l-brand-accent transition-all duration-300">
+        <button onclick="toggleYear('2014')" class="w-full p-6 flex justify-between items-center text-left hover:bg-brand-bg_secondary transition-colors">
+          <span class="font-display text-3xl text-brand-h1 tracking-wide">2014 and before</span>
+          <i id="icon-2014" class="fa-solid fa-plus text-brand-accent text-xl"></i>
+        </button>
+        <div id="content-2014" class="hidden p-8 border-t border-brand-divider bg-brand-bg_secondary text-center">
+          <p class="text-brand-h2 font-bold text-base md:text-lg uppercase tracking-wider">
+            Will be updated soon.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-brand-dark pt-12 pb-8 relative z-10 w-full text-center">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="max-w-lg mx-auto mb-8">
+        <h4 class="font-display text-lg tracking-wider mb-2 text-white">BOĞAZİÇİ UNIVERSITY SPORTS FEST</h4>
+        <p class="text-xs text-brand-footer_text mb-6 font-medium">Organized by Boğaziçi University Sports Committee</p>
+        
+        <div class="flex justify-center gap-6 text-sm font-semibold text-brand-footer_text">
+          <a href="https://www.sportscommittee.com" target="_blank" class="hover:text-brand-accent transition-colors">Sports Committee Website</a>
+          <span class="opacity-50">•</span>
+          <a href="mailto:info@bogazicisportsfest.com" class="hover:text-brand-accent transition-colors">info@bogazicisportsfest.com</a>
+        </div>
+
+        <div class="flex justify-center gap-4 mt-6">
+          <a href="https://www.youtube.com/@SportsCommittee1896" target="_blank" class="w-10 h-10 rounded-none bg-brand-card/5 border border-white/20 flex items-center justify-center text-white hover:bg-brand-card hover:text-brand-dark hover:border-brand-card transition-all">
+            <i class="fa-brands fa-youtube text-lg"></i>
+          </a>
+          <a href="https://www.instagram.com/sportsfest/" target="_blank" class="w-10 h-10 rounded-none bg-brand-card/5 border border-white/20 flex items-center justify-center text-white hover:bg-brand-card hover:text-brand-dark hover:border-brand-card transition-all">
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="my-8 flex flex-col items-center justify-center">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-xl border border-white/10 flex items-center justify-center bg-brand-dark overflow-hidden p-1 shadow-lg">
+          <video autoplay loop muted playsinline controlslist="nodownload" class="w-full h-full object-cover rounded-xl">
+            <source src="general media/torch-animation.mp4" type="video/mp4">
+          </video>
+        </div>
+        <span class="text-[11px] font-bold text-white tracking-widest uppercase mt-5 block">The Festival Flame Keeps Burning</span>
+      </div>
+
+      <div class="text-xs text-brand-footer_text border-t border-white/10 pt-6">
+        © 2027 Boğaziçi University Sports Committee. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= LIGHTBOX MODAL ================= -->
+  <div id="lightbox-modal" class="fixed inset-0 z-[110] bg-brand-dark/95 backdrop-blur-md hidden flex-col items-center justify-center p-4 transition-all" onclick="closeLightbox()">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-brand-accent text-3xl z-10 transition-colors">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <img id="lightbox-img" src="" alt="Full size" class="max-w-full max-h-[90vh] object-contain shadow-2xl border border-white/10 rounded-sm" onclick="event.stopPropagation()">
+  </div>
+
+  <!-- ================= PARTICIPANTS MODALS ================= -->
+
+  <!-- Modal 2026 -->
+  <div id="modal-participants-2026" class="fixed inset-0 z-[100] bg-brand-dark/90 backdrop-blur-sm hidden flex items-center justify-center p-6">
+    <div class="sharp-card max-w-4xl w-full max-h-[85vh] flex flex-col relative shadow-2xl">
+      <div class="p-6 border-b border-brand-divider flex justify-between items-center bg-brand-bg_secondary">
+        <h3 class="font-display text-2xl text-brand-h1 tracking-wide">2026 Participants</h3>
+        <button onclick="toggleParticipants('2026')" class="text-brand-h1 hover:text-brand-accent text-xl"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-0 overflow-y-auto max-h-[70vh]">
+        <table class="w-full text-left border-collapse participant-table">
+          <thead class="sticky top-0 z-10"><tr><th class="w-1/3">Country</th><th class="w-2/3">University</th></tr></thead>
+          <tbody>
+            <tr><td>ALGERIA</td><td>FSESG University of Algiers 3</td></tr>
+            <tr><td>BULGARIA</td><td>Medical University Varna</td></tr>
+            <tr><td>BULGARIA</td><td>Sofia University</td></tr>
+            <tr><td>ITALY</td><td>University of Milano-Bicocca</td></tr>
+            <tr><td>LEBANON</td><td>Byblos Football Club</td></tr>
+            <tr><td>LEBANON</td><td>Lebanese Private SNT</td></tr>
+            <tr><td>LEBANON</td><td>Saint Joseph University of Beirut</td></tr>
+            <tr><td>LEBANON</td><td>University of Tripoli</td></tr>
+            <tr><td>ROMANIA</td><td>The Bucharest University of Economic Studies</td></tr>
+            <tr><td>ROMANIA</td><td>University of Bucharest</td></tr>
+            <tr><td>ROMANIA</td><td>University of Craiova</td></tr>
+            <tr><td>RUSSIA</td><td>Saint-Petersburg State University</td></tr>
+            <tr><td>TURKEY</td><td>Bilgi University</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi Graduates</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi University</td></tr>
+            <tr><td>TURKEY</td><td>Dicle University</td></tr>
+            <tr><td>TURKEY</td><td>Galatasaray University</td></tr>
+            <tr><td>TURKEY</td><td>Gebze Technical University</td></tr>
+            <tr><td>TURKEY</td><td>Hacettepe University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Medeniyet University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Technical University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul University-Cerrahpaşa</td></tr>
+            <tr><td>TURKEY</td><td>Koç University</td></tr>
+            <tr><td>TURKEY</td><td>Marmara University</td></tr>
+            <tr><td>TURKEY</td><td>Yıldız Technical University</td></tr>
+            <tr><td>UNITED KINGDOM</td><td>University of Cambridge</td></tr>
+            <tr><td>UZBEKISTAN</td><td>Gulistan State University</td></tr>
+            <tr><td>UZBEKISTAN</td><td>The University of World Economy and Diplomacy</td></tr>
+            <tr><td>UZBEKISTAN</td><td>Urganch State University</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2025 -->
+  <div id="modal-participants-2025" class="fixed inset-0 z-[100] bg-brand-dark/90 backdrop-blur-sm hidden flex items-center justify-center p-6">
+    <div class="sharp-card max-w-4xl w-full max-h-[85vh] flex flex-col relative shadow-2xl">
+      <div class="p-6 border-b border-brand-divider flex justify-between items-center bg-brand-bg_secondary">
+        <h3 class="font-display text-2xl text-brand-h1 tracking-wide">2025 Participants</h3>
+        <button onclick="toggleParticipants('2025')" class="text-brand-h1 hover:text-brand-accent text-xl"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-0 overflow-y-auto max-h-[70vh]">
+        <table class="w-full text-left border-collapse participant-table">
+          <thead class="sticky top-0 z-10"><tr><th class="w-1/3">Country</th><th class="w-2/3">University</th></tr></thead>
+          <tbody>
+            <tr><td>ALGERIA</td><td>University of Algiers 3</td></tr>
+            <tr><td>BULGARIA</td><td>MU-Varna</td></tr>
+            <tr><td>BULGARIA</td><td>Sofia University</td></tr>
+            <tr><td>BULGARIA</td><td>University of Shumen</td></tr>
+            <tr><td>FRANCE</td><td>ESSEC Business School</td></tr>
+            <tr><td>GERMANY</td><td>HHU Dusseldorf</td></tr>
+            <tr><td>GERMANY</td><td>RWTH Aachen University</td></tr>
+            <tr><td>GREECE</td><td>University of Thessaloniki</td></tr>
+            <tr><td>LEBANON</td><td>AUST</td></tr>
+            <tr><td>LEBANON</td><td>Antonine University</td></tr>
+            <tr><td>LEBANON</td><td>St Joseph University of Beirut</td></tr>
+            <tr><td>LEBANON</td><td>University of Tripoli</td></tr>
+            <tr><td>NETHERLANDS</td><td>TU Eindhoven</td></tr>
+            <tr><td>ROMANIA</td><td>University of Craiova</td></tr>
+            <tr><td>RUSSIA</td><td>St Petersburg State University</td></tr>
+            <tr><td>SERBIA</td><td>University of Belgrade-FON</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi Graduates</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi University</td></tr>
+            <tr><td>TURKEY</td><td>Dicle University</td></tr>
+            <tr><td>TURKEY</td><td>Galatasaray University</td></tr>
+            <tr><td>TURKEY</td><td>Gebze Tech. University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Tech. University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul University-Cerrahpaşa</td></tr>
+            <tr><td>TURKEY</td><td>Koç University</td></tr>
+            <tr><td>TURKEY</td><td>Marmara University</td></tr>
+            <tr><td>TURKEY</td><td>Middle East Tech. University</td></tr>
+            <tr><td>TURKEY</td><td>Sabancı University</td></tr>
+            <tr><td>TURKEY</td><td>Turkish-German University</td></tr>
+            <tr><td>TURKEY</td><td>Yıldız Tech. University</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2024 -->
+  <div id="modal-participants-2024" class="fixed inset-0 z-[100] bg-brand-dark/90 backdrop-blur-sm hidden flex items-center justify-center p-6">
+    <div class="sharp-card max-w-4xl w-full max-h-[85vh] flex flex-col relative shadow-2xl">
+      <div class="p-6 border-b border-brand-divider flex justify-between items-center bg-brand-bg_secondary">
+        <h3 class="font-display text-2xl text-brand-h1 tracking-wide">2024 Participants</h3>
+        <button onclick="toggleParticipants('2024')" class="text-brand-h1 hover:text-brand-accent text-xl"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-0 overflow-y-auto max-h-[70vh]">
+        <table class="w-full text-left border-collapse participant-table">
+          <thead class="sticky top-0 z-10"><tr><th class="w-1/3">Country</th><th class="w-2/3">University</th></tr></thead>
+          <tbody>
+            <tr><td>AZERBAIJAN</td><td>Azerbaijan State University of Economics</td></tr>
+            <tr><td>BELARUS</td><td>Hellcats Minsk</td></tr>
+            <tr><td>CROATIA</td><td>University of Zadar</td></tr>
+            <tr><td>GERMANY</td><td>Aachen University</td></tr>
+            <tr><td>KAZAKHSTAN</td><td>KIMEP</td></tr>
+            <tr><td>LEBANON</td><td>AUST</td></tr>
+            <tr><td>LEBANON</td><td>American University of Beirut</td></tr>
+            <tr><td>LEBANON</td><td>Antonine University</td></tr>
+            <tr><td>LEBANON</td><td>FSESG 3 University</td></tr>
+            <tr><td>LEBANON</td><td>Lebanese American University</td></tr>
+            <tr><td>LEBANON</td><td>University of Tripoli</td></tr>
+            <tr><td>LEBANON</td><td>Université Saint-Joseph de Beyrouth</td></tr>
+            <tr><td>NETHERLANDS</td><td>Leiden University</td></tr>
+            <tr><td>ROMANIA</td><td>Babeș-Bolyai</td></tr>
+            <tr><td>ROMANIA</td><td>University of Bucharest</td></tr>
+            <tr><td>ROMANIA</td><td>University of Craiova</td></tr>
+            <tr><td>RUSSIA</td><td>Lobachevsky State University</td></tr>
+            <tr><td>RUSSIA</td><td>RUDN University</td></tr>
+            <tr><td>RUSSIA</td><td>Saint-Petersburg State University</td></tr>
+            <tr><td>SERBIA</td><td>Belgrade University FON</td></tr>
+            <tr><td>TURKEY</td><td>BOUN Graduates</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi University</td></tr>
+            <tr><td>TURKEY</td><td>Cerrahpaşa</td></tr>
+            <tr><td>TURKEY</td><td>Dicle University</td></tr>
+            <tr><td>TURKEY</td><td>Galatasaray University</td></tr>
+            <tr><td>TURKEY</td><td>Koç University</td></tr>
+            <tr><td>TURKEY</td><td>Marmara University</td></tr>
+            <tr><td>TURKEY</td><td>İstanbul Gelişim</td></tr>
+            <tr><td>TURKEY</td><td>İstanbul University</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2023 -->
+  <div id="modal-participants-2023" class="fixed inset-0 z-[100] bg-brand-dark/90 backdrop-blur-sm hidden flex items-center justify-center p-6">
+    <div class="sharp-card max-w-4xl w-full max-h-[85vh] flex flex-col relative shadow-2xl">
+      <div class="p-6 border-b border-brand-divider flex justify-between items-center bg-brand-bg_secondary">
+        <h3 class="font-display text-2xl text-brand-h1 tracking-wide">2023 Participants</h3>
+        <button onclick="toggleParticipants('2023')" class="text-brand-h1 hover:text-brand-accent text-xl"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-0 overflow-y-auto max-h-[70vh]">
+        <table class="w-full text-left border-collapse participant-table">
+          <thead class="sticky top-0 z-10"><tr><th class="w-1/3">Country</th><th class="w-2/3">University</th></tr></thead>
+          <tbody>
+            <tr><td>KAZAKHSTAN</td><td>KIMEP University</td></tr>
+            <tr><td>ROMANIA</td><td>Babeş-Bolyai University</td></tr>
+            <tr><td>ROMANIA</td><td>University of Craiova</td></tr>
+            <tr><td>RUSSIA</td><td>Moscow State University of International Relations</td></tr>
+            <tr><td>RUSSIA</td><td>RUDN University</td></tr>
+            <tr><td>TURKEY</td><td>BOUN Graduates</td></tr>
+            <tr><td>TURKEY</td><td>Bandırma University</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi University</td></tr>
+            <tr><td>TURKEY</td><td>Galatasaray University</td></tr>
+            <tr><td>TURKEY</td><td>METU</td></tr>
+            <tr><td>TURKEY</td><td>Marmara University</td></tr>
+            <tr><td>TURKEY</td><td>Piri Reis University</td></tr>
+            <tr><td>TURKEY</td><td>Turkish-Deutsche University</td></tr>
+            <tr><td>TURKEY</td><td>Uludağ University</td></tr>
+            <tr><td>TURKEY</td><td>Yıldız Technical University</td></tr>
+            <tr><td>TURKEY</td><td>İTÜ Graduates</td></tr>
+            <tr><td>TURKEY</td><td>İstanbul Aydın University</td></tr>
+            <tr><td>TURKEY</td><td>İstanbul Medeniyet University</td></tr>
+            <tr><td>TURKEY</td><td>İstanbul Technical University</td></tr>
+            <tr><td>TURKEY</td><td>İstanbul University</td></tr>
+            <tr><td>TURKEY</td><td>İstanbul University Medicine</td></tr>
+            <tr><td>TURKEY</td><td>İstanbul İktisat Sports Club</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2022 -->
+  <div id="modal-participants-2022" class="fixed inset-0 z-[100] bg-brand-dark/90 backdrop-blur-sm hidden flex items-center justify-center p-6">
+    <div class="sharp-card max-w-4xl w-full max-h-[85vh] flex flex-col relative shadow-2xl">
+      <div class="p-6 border-b border-brand-divider flex justify-between items-center bg-brand-bg_secondary">
+        <h3 class="font-display text-2xl text-brand-h1 tracking-wide">2022 Participants</h3>
+        <button onclick="toggleParticipants('2022')" class="text-brand-h1 hover:text-brand-accent text-xl"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-0 overflow-y-auto max-h-[70vh]">
+        <table class="w-full text-left border-collapse participant-table">
+          <thead class="sticky top-0 z-10"><tr><th class="w-1/3">Country</th><th class="w-2/3">University</th></tr></thead>
+          <tbody>
+            <tr><td>GERMANY</td><td>FH Aachen University</td></tr>
+            <tr><td>GERMANY</td><td>Karlsruhe Institute of Technology</td></tr>
+            <tr><td>GERMANY</td><td>RWTH Aachen University</td></tr>
+            <tr><td>LEBANON</td><td>American University of Beirut</td></tr>
+            <tr><td>NETHERLANDS</td><td>Leiden University</td></tr>
+            <tr><td>NETHERLANDS</td><td>Maastricht University</td></tr>
+            <tr><td>ROMANIA</td><td>University of Craiova</td></tr>
+            <tr><td>RUSSIA</td><td>RUDN University</td></tr>
+            <tr><td>TURKEY</td><td>BOUN Graduates</td></tr>
+            <tr><td>TURKEY</td><td>Bahcesehir University</td></tr>
+            <tr><td>TURKEY</td><td>Bandirma University</td></tr>
+            <tr><td>TURKEY</td><td>Bogazici University</td></tr>
+            <tr><td>TURKEY</td><td>Dicle University</td></tr>
+            <tr><td>TURKEY</td><td>Dogus University</td></tr>
+            <tr><td>TURKEY</td><td>Dumlupinar University</td></tr>
+            <tr><td>TURKEY</td><td>Galatasaray University</td></tr>
+            <tr><td>TURKEY</td><td>Hacettepe University</td></tr>
+            <tr><td>TURKEY</td><td>ITU Graduates</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Kultur University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Sabahattin Zaim University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Technical University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul University</td></tr>
+            <tr><td>TURKEY</td><td>METU Graduates</td></tr>
+            <tr><td>TURKEY</td><td>Marmara University</td></tr>
+            <tr><td>TURKEY</td><td>Piri Reis University</td></tr>
+            <tr><td>TURKEY</td><td>Sakarya University</td></tr>
+            <tr><td>TURKEY</td><td>Turkish-Deutsche University</td></tr>
+            <tr><td>TURKEY</td><td>ULDO Sports Club</td></tr>
+            <tr><td>TURKEY</td><td>Uludag University</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2021 -->
+  <div id="modal-participants-2021" class="fixed inset-0 z-[100] bg-brand-dark/90 backdrop-blur-sm hidden flex items-center justify-center p-6">
+    <div class="sharp-card max-w-4xl w-full max-h-[85vh] flex flex-col relative shadow-2xl">
+      <div class="p-6 border-b border-brand-divider flex justify-between items-center bg-brand-bg_secondary">
+        <h3 class="font-display text-2xl text-brand-h1 tracking-wide">2021 Participants</h3>
+        <button onclick="toggleParticipants('2021')" class="text-brand-h1 hover:text-brand-accent text-xl"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-0 overflow-y-auto max-h-[70vh]">
+        <table class="w-full text-left border-collapse participant-table">
+          <thead class="sticky top-0 z-10"><tr><th class="w-1/3">Country</th><th class="w-2/3">University</th></tr></thead>
+          <tbody>
+            <tr><td>GERMANY</td><td>Konstanz University</td></tr>
+            <tr><td>GERMANY</td><td>Siegen University</td></tr>
+            <tr><td>ITALY</td><td>Torino University</td></tr>
+            <tr><td>ROMANIA</td><td>Bükreş University</td></tr>
+            <tr><td>RUSSIA</td><td>Gubkin Russian State University of Oil and Gas</td></tr>
+            <tr><td>TURKEY</td><td>Adnan Menderes University</td></tr>
+            <tr><td>TURKEY</td><td>Akdeniz University</td></tr>
+            <tr><td>TURKEY</td><td>Amasya University</td></tr>
+            <tr><td>TURKEY</td><td>Atatürk University</td></tr>
+            <tr><td>TURKEY</td><td>Aydın University</td></tr>
+            <tr><td>TURKEY</td><td>Bahçeşehir University</td></tr>
+            <tr><td>TURKEY</td><td>Beykent University</td></tr>
+            <tr><td>TURKEY</td><td>Bilkent University</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi University</td></tr>
+            <tr><td>TURKEY</td><td>Dicle University</td></tr>
+            <tr><td>TURKEY</td><td>Doğuş University</td></tr>
+            <tr><td>TURKEY</td><td>Ege University</td></tr>
+            <tr><td>TURKEY</td><td>Eskişehir Osmangazi University</td></tr>
+            <tr><td>TURKEY</td><td>Galatasaray University</td></tr>
+            <tr><td>TURKEY</td><td>Gebze Teknik University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Aydın University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Bilgi University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Kültür University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Teknik University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul University</td></tr>
+            <tr><td>TURKEY</td><td>Kastamonu University</td></tr>
+            <tr><td>TURKEY</td><td>Kocaeli University</td></tr>
+            <tr><td>TURKEY</td><td>Koç University</td></tr>
+            <tr><td>TURKEY</td><td>Kırklareli University</td></tr>
+            <tr><td>TURKEY</td><td>Marmara University</td></tr>
+            <tr><td>TURKEY</td><td>Nişantaşı University</td></tr>
+            <tr><td>TURKEY</td><td>Orta Doğu Teknik University</td></tr>
+            <tr><td>TURKEY</td><td>Sabancı University</td></tr>
+            <tr><td>TURKEY</td><td>Selçuk University</td></tr>
+            <tr><td>TURKEY</td><td>Türk Alman University</td></tr>
+            <tr><td>TURKEY</td><td>Özyeğin University</td></tr>
+            <tr><td>TURKEY</td><td>İstinye University</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2019 -->
+  <div id="modal-participants-2019" class="fixed inset-0 z-[100] bg-brand-dark/90 backdrop-blur-sm hidden flex items-center justify-center p-6">
+    <div class="sharp-card max-w-4xl w-full max-h-[85vh] flex flex-col relative shadow-2xl">
+      <div class="p-6 border-b border-brand-divider flex justify-between items-center bg-brand-bg_secondary">
+        <h3 class="font-display text-2xl text-brand-h1 tracking-wide">2019 Participants</h3>
+        <button onclick="toggleParticipants('2019')" class="text-brand-h1 hover:text-brand-accent text-xl"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-0 overflow-y-auto max-h-[70vh]">
+        <table class="w-full text-left border-collapse participant-table">
+          <thead class="sticky top-0 z-10"><tr><th class="w-1/3">Country</th><th class="w-2/3">University</th></tr></thead>
+          <tbody>
+            <tr><td>BULGARIA</td><td>College of Economics and Management</td></tr>
+            <tr><td>BULGARIA</td><td>Sofia University</td></tr>
+            <tr><td>CROATIA</td><td>Juraj Dobrila University of Pula</td></tr>
+            <tr><td>FRANCE</td><td>ESSEC Graduates</td></tr>
+            <tr><td>GERMANY</td><td>Karlsruhe Institute of Technology</td></tr>
+            <tr><td>GREECE</td><td>American College of Thessaloniki</td></tr>
+            <tr><td>KUWAIT</td><td>American University of Kuwait</td></tr>
+            <tr><td>LEBANON</td><td>AUST</td></tr>
+            <tr><td>LEBANON</td><td>Rafik Hariri University</td></tr>
+            <tr><td>LEBANON</td><td>Saint Joseph University of Beirut</td></tr>
+            <tr><td>LEBANON</td><td>University of Balamand</td></tr>
+            <tr><td>ROMANIA</td><td>Babeş-Bolyai University</td></tr>
+            <tr><td>RUSSIA</td><td>Peoples' Friendship University of Russia</td></tr>
+            <tr><td>SERBIA</td><td>Faculty of Organizational Sciences</td></tr>
+            <tr><td>SERBIA</td><td>Faculty of Sport and Physical Education</td></tr>
+            <tr><td>SLOVAKIA</td><td>Matej Bel University</td></tr>
+            <tr><td>TURKEY</td><td>Akdeniz University</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi Graduates</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi University</td></tr>
+            <tr><td>TURKEY</td><td>Dicle University</td></tr>
+            <tr><td>TURKEY</td><td>Dokuz Eylül University</td></tr>
+            <tr><td>TURKEY</td><td>Galatasaray University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Technical University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul University</td></tr>
+            <tr><td>TURKEY</td><td>Koç University</td></tr>
+            <tr><td>TURKEY</td><td>MEF University</td></tr>
+            <tr><td>TURKEY</td><td>Marmara University</td></tr>
+            <tr><td>TURKEY</td><td>Medipol University</td></tr>
+            <tr><td>TURKEY</td><td>Middle East Technical University</td></tr>
+            <tr><td>TURKEY</td><td>Sabancı University</td></tr>
+            <tr><td>TURKEY</td><td>TED University</td></tr>
+            <tr><td>TURKEY</td><td>Yalova University</td></tr>
+            <tr><td>TURKEY</td><td>Yeditepe University</td></tr>
+            <tr><td>TURKEY</td><td>İzzet Baysal University</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2018 -->
+  <div id="modal-participants-2018" class="fixed inset-0 z-[100] bg-brand-dark/90 backdrop-blur-sm hidden flex items-center justify-center p-6">
+    <div class="sharp-card max-w-4xl w-full max-h-[85vh] flex flex-col relative shadow-2xl">
+      <div class="p-6 border-b border-brand-divider flex justify-between items-center bg-brand-bg_secondary">
+        <h3 class="font-display text-2xl text-brand-h1 tracking-wide">2018 Participants</h3>
+        <button onclick="toggleParticipants('2018')" class="text-brand-h1 hover:text-brand-accent text-xl"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-0 overflow-y-auto max-h-[70vh]">
+        <table class="w-full text-left border-collapse participant-table">
+          <thead class="sticky top-0 z-10"><tr><th class="w-1/3">Country</th><th class="w-2/3">University</th></tr></thead>
+          <tbody>
+            <tr><td>BULGARIA</td><td>Plovdiv University</td></tr>
+            <tr><td>BULGARIA</td><td>Sofia University</td></tr>
+            <tr><td>CROATIA</td><td>Zagreb School of Economics and Management</td></tr>
+            <tr><td>GERMANY</td><td>RWTH/FH Aachen</td></tr>
+            <tr><td>INDIA</td><td>Swaraj University</td></tr>
+            <tr><td>LEBANON</td><td>Lebanese University</td></tr>
+            <tr><td>LEBANON</td><td>Rafik Hariri University</td></tr>
+            <tr><td>ROMANIA</td><td>University of Craiova</td></tr>
+            <tr><td>RUSSIA</td><td>People Friendship University of Russia</td></tr>
+            <tr><td>SERBIA</td><td>Faculty of Organizational Sciences (Belgrade)</td></tr>
+            <tr><td>SERBIA</td><td>Faculty of Special Education (Belgrade)</td></tr>
+            <tr><td>SERBIA</td><td>School of Law (Belgrade)</td></tr>
+            <tr><td>TURKEY</td><td>Acıbadem University</td></tr>
+            <tr><td>TURKEY</td><td>BOUN Graduates</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi University</td></tr>
+            <tr><td>TURKEY</td><td>Dokuz Eylül University</td></tr>
+            <tr><td>TURKEY</td><td>Galatasaray University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Aydın University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Technical University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul University</td></tr>
+            <tr><td>TURKEY</td><td>Koç University</td></tr>
+            <tr><td>TURKEY</td><td>MEF University</td></tr>
+            <tr><td>TURKEY</td><td>Marmara University</td></tr>
+            <tr><td>TURKEY</td><td>Middle East Technical University</td></tr>
+            <tr><td>TURKEY</td><td>Yeditepe University</td></tr>
+            <tr><td>TURKEY</td><td>Yıldız Technical University</td></tr>
+            <tr><td>TURKEY</td><td>İstinye University</td></tr>
+            <tr><td>TURKEY</td><td>İzmir University of Economics</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2017 -->
+  <div id="modal-participants-2017" class="fixed inset-0 z-[100] bg-brand-dark/90 backdrop-blur-sm hidden flex items-center justify-center p-6">
+    <div class="sharp-card max-w-4xl w-full max-h-[85vh] flex flex-col relative shadow-2xl">
+      <div class="p-6 border-b border-brand-divider flex justify-between items-center bg-brand-bg_secondary">
+        <h3 class="font-display text-2xl text-brand-h1 tracking-wide">2017 Participants</h3>
+        <button onclick="toggleParticipants('2017')" class="text-brand-h1 hover:text-brand-accent text-xl"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-0 overflow-y-auto max-h-[70vh]">
+        <table class="w-full text-left border-collapse participant-table">
+          <thead class="sticky top-0 z-10"><tr><th class="w-1/3">Country</th><th class="w-2/3">University</th></tr></thead>
+          <tbody>
+            <tr><td>KAZAKHSTAN</td><td>KIMEP</td></tr>
+            <tr><td>LEBANON</td><td>Rafik Hariri University</td></tr>
+            <tr><td>ROMANIA</td><td>University of Craiova</td></tr>
+            <tr><td>TURKEY</td><td>BOUN Graduates</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi University</td></tr>
+            <tr><td>TURKEY</td><td>Dokuz Eylül University</td></tr>
+            <tr><td>TURKEY</td><td>Galatasaray University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Aydın University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Technical University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul University</td></tr>
+            <tr><td>TURKEY</td><td>Koç University</td></tr>
+            <tr><td>TURKEY</td><td>MEF University</td></tr>
+            <tr><td>TURKEY</td><td>Marmara University</td></tr>
+            <tr><td>TURKEY</td><td>Middle East Technical University</td></tr>
+            <tr><td>TURKEY</td><td>Yalova University</td></tr>
+            <tr><td>TURKEY</td><td>Yıldız Technical University</td></tr>
+            <tr><td>TURKEY</td><td>Özyeğin University</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2016 -->
+  <div id="modal-participants-2016" class="fixed inset-0 z-[100] bg-brand-dark/90 backdrop-blur-sm hidden flex items-center justify-center p-6">
+    <div class="sharp-card max-w-4xl w-full max-h-[85vh] flex flex-col relative shadow-2xl">
+      <div class="p-6 border-b border-brand-divider flex justify-between items-center bg-brand-bg_secondary">
+        <h3 class="font-display text-2xl text-brand-h1 tracking-wide">2016 Participants</h3>
+        <button onclick="toggleParticipants('2016')" class="text-brand-h1 hover:text-brand-accent text-xl"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-0 overflow-y-auto max-h-[70vh]">
+        <table class="w-full text-left border-collapse participant-table">
+          <thead class="sticky top-0 z-10"><tr><th class="w-1/3">Country</th><th class="w-2/3">University</th></tr></thead>
+          <tbody>
+            <tr><td>BULGARIA</td><td>Shumen University</td></tr>
+            <tr><td>BULGARIA</td><td>Sofia University</td></tr>
+            <tr><td>KAZAKHSTAN</td><td>KIMEP University</td></tr>
+            <tr><td>LEBANON</td><td>Lebanese International University</td></tr>
+            <tr><td>NETHERLANDS</td><td>University of Berne</td></tr>
+            <tr><td>ROMANIA</td><td>Babeş-Bolyai University</td></tr>
+            <tr><td>ROMANIA</td><td>University of Craiova</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi Graduates</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi University</td></tr>
+            <tr><td>TURKEY</td><td>Galatasaray Graduates</td></tr>
+            <tr><td>TURKEY</td><td>Galatasaray University</td></tr>
+            <tr><td>TURKEY</td><td>Haliç University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Aydın University</td></tr>
+            <tr><td>TURKEY</td><td>Istanbul Technical University</td></tr>
+            <tr><td>TURKEY</td><td>Koç University</td></tr>
+            <tr><td>TURKEY</td><td>Marmara University</td></tr>
+            <tr><td>TURKEY</td><td>Trakya University</td></tr>
+            <tr><td>TURKEY</td><td>Özyeğin University</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2015 -->
+  <div id="modal-participants-2015" class="fixed inset-0 z-[100] bg-brand-dark/90 backdrop-blur-sm hidden flex items-center justify-center p-6">
+    <div class="sharp-card max-w-4xl w-full max-h-[85vh] flex flex-col relative shadow-2xl">
+      <div class="p-6 border-b border-brand-divider flex justify-between items-center bg-brand-bg_secondary">
+        <h3 class="font-display text-2xl text-brand-h1 tracking-wide">2015 Participants</h3>
+        <button onclick="toggleParticipants('2015')" class="text-brand-h1 hover:text-brand-accent text-xl"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="p-0 overflow-y-auto max-h-[70vh]">
+        <table class="w-full text-left border-collapse participant-table">
+          <thead class="sticky top-0 z-10"><tr><th class="w-1/3">Country</th><th class="w-2/3">University</th></tr></thead>
+          <tbody>
+            <tr><td>BULGARIA</td><td>College of Economics and Management</td></tr>
+            <tr><td>BULGARIA</td><td>Konstantin Preslavsky University of Shumen</td></tr>
+            <tr><td>BULGARIA</td><td>Medical University Varna</td></tr>
+            <tr><td>BULGARIA</td><td>Sofia University</td></tr>
+            <tr><td>CROATIA</td><td>Zagreb School of Economics and Management</td></tr>
+            <tr><td>CZECH REPUBLIC</td><td>Czech Technical University</td></tr>
+            <tr><td>GERMANY</td><td>FAU Erlangen-Nürnberg</td></tr>
+            <tr><td>GERMANY</td><td>HAW Lanshut</td></tr>
+            <tr><td>GERMANY</td><td>Technical University Darmstadt</td></tr>
+            <tr><td>GERMANY</td><td>Trier University</td></tr>
+            <tr><td>KAZAKHSTAN</td><td>KIMEP</td></tr>
+            <tr><td>KOSOVO</td><td>University of Prishtina, Hasan Prishtina</td></tr>
+            <tr><td>LEBANON</td><td>Lebanese Youth Sport Union</td></tr>
+            <tr><td>LEBANON</td><td>Notre Dame University</td></tr>
+            <tr><td>LEBANON</td><td>Université Saint-Joseph de Beyrouth</td></tr>
+            <tr><td>LEBANON</td><td>University of Balamand</td></tr>
+            <tr><td>LEBANON</td><td>West Mount University</td></tr>
+            <tr><td>MACEDONIA</td><td>University of Goce Delcev</td></tr>
+            <tr><td>NETHERLANDS</td><td>University of Technology Eindhoven</td></tr>
+            <tr><td>OMAN</td><td>Sultan Qaboos University</td></tr>
+            <tr><td>POLAND</td><td>Cracow University of Economics</td></tr>
+            <tr><td>PORTUGAL</td><td>Instituto Superior Técnico</td></tr>
+            <tr><td>ROMANIA</td><td>Babes-Bolyai University</td></tr>
+            <tr><td>ROMANIA</td><td>University of Craiova</td></tr>
+            <tr><td>ROMANIA</td><td>University of Politehnica</td></tr>
+            <tr><td>SERBIA</td><td>Faculty of Architecture Belgrade</td></tr>
+            <tr><td>SERBIA</td><td>Faculty of Law</td></tr>
+            <tr><td>SERBIA</td><td>Faculty of Organizational Sciences</td></tr>
+            <tr><td>SERBIA</td><td>Faculty of Philology</td></tr>
+            <tr><td>SERBIA</td><td>Faculty of Political Science</td></tr>
+            <tr><td>SERBIA</td><td>Faculty of Special Education and Rehabilitation</td></tr>
+            <tr><td>SWITZERLAND</td><td>University of Berne</td></tr>
+            <tr><td>TURKEY</td><td>Boğaziçi University</td></tr>
+            <tr><td>TURKEY</td><td>Boun Graduates</td></tr>
+            <tr><td>TURKEY</td><td>Galatasaray University</td></tr>
+            <tr><td>TURKEY</td><td>Koc University</td></tr>
+            <tr><td>TURKEY</td><td>Sabanci University</td></tr>
+            <tr><td>TURKEY</td><td>Trakya University</td></tr>
+            <tr><td>USA</td><td>University of Kentucky</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= GALLERY BUILDER SCRIPT ================= -->
+  <script>
+    const galleryConfigs = [
+      { id: 'carousel-highlights', folder: 'highlights', count: 40, ext: 'jpg', eagerCount: 3 },
+      { id: 'carousel-2026', folder: '2026', count: 46, getExt: (i) => i <= 10 ? 'jpeg' : 'jpg' },
+      { id: 'carousel-2025', folder: '2025', count: 33, ext: 'jpeg' },
+      { id: 'carousel-2024', folder: '2024', count: 29, ext: 'jpg' },
+      { id: 'carousel-2023', folder: '2023', count: 15, ext: 'jpg' },
+      { id: 'carousel-2022', folder: '2022', count: 29, ext: 'jpeg' },
+      { id: 'carousel-2021', folder: '2021', count: 15, ext: 'jpg' },
+      { id: 'carousel-2019', folder: '2019', count: 15, ext: 'jpg' },
+      { id: 'carousel-2018', folder: '2018', count: 15, ext: 'jpg' },
+      { id: 'carousel-2017', folder: '2017', count: 15, ext: 'jpg' },
+      { id: 'carousel-2016', folder: '2016', count: 15, ext: 'jpg' },
+      { id: 'carousel-2015', folder: '2015', count: 15, ext: 'jpg' }
+    ];
+
+    function buildGalleryItems(config) {
+      const container = document.getElementById(config.id);
+      if (!container) return;
+      let html = '';
+      for (let i = 1; i <= config.count; i++) {
+        const ext = config.getExt ? config.getExt(i) : config.ext;
+        const src = `${config.folder}/${i}.${ext}`;
+        const thumbSrc = `${config.folder}/${i}-thumb.${ext}`;
+        const isEager = config.eagerCount && i <= config.eagerCount;
+        const loadingAttr = isEager ? '' : 'loading="lazy"';
+        
+        html += `
+          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img">
+            <img src="${src}" 
+                 srcset="${thumbSrc} 400w, ${src} 1080w" 
+                 sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" 
+                 data-full="${src}" 
+                 onclick="openLightbox(this.dataset.full)" 
+                 alt="${config.folder} Photo ${i}" 
+                 class="w-full ${config.folder === 'highlights' ? 'h-64' : 'h-56'} object-cover group-hover/img:scale-105 transition-transform duration-500 bg-brand-divider cursor-pointer" 
+                 ${loadingAttr} 
+                 decoding="async"
+                 onerror="this.removeAttribute('srcset'); this.src='${src}';">
+          </div>
+        `;
+      }
+      container.innerHTML = html;
+    }
+
+    // Build all galleries instantly
+    galleryConfigs.forEach(buildGalleryItems);
+  </script>
+
+</body>
+</html>
