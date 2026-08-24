@@ -74,6 +74,12 @@
     .carousel-item {
       scroll-snap-align: start;
     }
+    
+    /* Optimization: Content Visibility */
+    .content-auto {
+      content-visibility: auto;
+      contain-intrinsic-size: 300px;
+    }
 
     /* Modal Table Styling */
     .participant-table th {
@@ -1096,14 +1102,13 @@
 
   <!-- ================= GALLERY BUILDER SCRIPT ================= -->
   <script>
-    // Updated configs: Only the years that currently have photos
     const galleryConfigs = [
-      { id: 'carousel-highlights', folder: 'highlights', count: 40, ext: 'jpg', eagerCount: 3 },
-      { id: 'carousel-2026', folder: '2026', count: 46, getExt: (i) => i <= 10 ? 'jpeg' : 'jpg' },
-      { id: 'carousel-2025', folder: '2025', count: 33, ext: 'jpeg' },
-      { id: 'carousel-2024', folder: '2024', count: 29, ext: 'jpg' },
-      { id: 'carousel-2023', folder: '2023', count: 15, ext: 'jpg' },
-      { id: 'carousel-2022', folder: '2022', count: 29, ext: 'jpeg' }
+      { id: 'carousel-highlights', folder: 'highlights', count: 40, eagerCount: 3 },
+      { id: 'carousel-2026', folder: '2026', count: 46 },
+      { id: 'carousel-2025', folder: '2025', count: 33 },
+      { id: 'carousel-2024', folder: '2024', count: 29 },
+      { id: 'carousel-2023', folder: '2023', count: 15 },
+      { id: 'carousel-2022', folder: '2022', count: 29 }
     ];
 
     function buildGalleryItems(config) {
@@ -1111,14 +1116,13 @@
       if (!container) return;
       let html = '';
       for (let i = 1; i <= config.count; i++) {
-        const ext = config.getExt ? config.getExt(i) : config.ext;
-        const src = `${config.folder}/${i}.${ext}`;
-        const thumbSrc = `${config.folder}/${i}-thumb.${ext}`;
+        const src = `${config.folder}/${i}.webp`;
+        const thumbSrc = `${config.folder}/${i}-thumb.webp`;
         const isEager = config.eagerCount && i <= config.eagerCount;
         const loadingAttr = isEager ? '' : 'loading="lazy"';
         
         html += `
-          <div class="carousel-item w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img">
+          <div class="carousel-item content-auto w-full md:w-[48%] lg:w-[31%] flex-none overflow-hidden sharp-card group/img">
             <img src="${src}" 
                  srcset="${thumbSrc} 400w, ${src} 1080w" 
                  sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" 
