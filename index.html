@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Boğaziçi University | Sports Fest</title>
-  <meta name="description" content="The first and only international universities sports festival held in Turkey, by Boğaziçi Univ. @sportscommittee #since1980." />
   
-  <!-- Google Site Verification Tag -->
-  <meta name="google-site-verification" content="GE9eY_yLpAaWjIuxJNifjz7WPx3oQecYSLYvwy7eQd8" />
-  ...
-</head>
-
+  <!-- FAVICON (Tab Icon) -->
+  <link rel="icon" type="image/png" href="general media/sportsfest.png">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,6 +85,15 @@
         icon.classList.add('fa-bars');
       }
     }
+    
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('mobile-menu-icon');
+      menu.classList.add('hidden');
+      menu.classList.remove('flex');
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+    }
   </script>
 </head>
 <body class="antialiased selection:bg-brand-accent selection:text-white relative">
@@ -96,7 +102,7 @@
   <nav class="fixed top-0 left-0 w-full z-50 matte-nav">
     <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
       
-      <a href="index.html" class="flex items-center gap-3 border-r border-brand-divider pr-6">
+      <a href="#about" class="flex items-center gap-3 border-r border-brand-divider pr-6">
         <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-brand-border bg-brand-card flex items-center justify-center">
           <img src="general media/sportsfest.png" alt="Sports Fest Logo" class="w-full h-full object-cover">
         </div>
@@ -108,11 +114,11 @@
 
       <!-- Desktop Links -->
       <div class="hidden lg:flex items-center gap-7 text-sm font-semibold ml-6">
-        <a href="index.html#about" class="text-brand-dark font-bold transition-colors">Home</a>
-        <a href="index.html#disciplines" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">Disciplines</a>
-        <a href="index.html#packages" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">Packages</a>
-        <a href="index.html#history" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">History</a>
-        <a href="index.html#istanbul" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">Istanbul</a>
+        <a href="#about" class="text-brand-dark font-bold transition-colors">Home</a>
+        <a href="#disciplines" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">Disciplines</a>
+        <a href="#packages" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">Packages</a>
+        <a href="#history" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">History</a>
+        <a href="#istanbul" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">Istanbul</a>
         <a href="faq.html" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">FAQ</a>
         <a href="contact.html" class="text-brand-h2 hover:text-brand-accent transition-colors tracking-wide">Contact Us</a>
         <a href="gallery-legacy.html" class="px-3 py-1.5 border border-brand-border text-brand-h2 font-bold hover:bg-brand-bg_secondary hover:text-brand-accent transition-all flex items-center gap-1.5 rounded-none">
@@ -134,11 +140,11 @@
 
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden lg:hidden absolute top-24 left-0 w-full bg-brand-bg_primary border-b border-brand-border shadow-xl flex-col px-6 py-4 gap-2 text-sm font-bold z-40">
-      <a href="index.html#about" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Home</a>
-      <a href="index.html#disciplines" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Disciplines</a>
-      <a href="index.html#packages" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Packages</a>
-      <a href="index.html#history" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">History</a>
-      <a href="index.html#istanbul" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Istanbul</a>
+      <a href="#about" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Home</a>
+      <a href="#disciplines" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Disciplines</a>
+      <a href="#packages" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Packages</a>
+      <a href="#history" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">History</a>
+      <a href="#istanbul" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Istanbul</a>
       <a href="faq.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">FAQ</a>
       <a href="contact.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Contact Us</a>
       <a href="gallery-legacy.html" class="text-brand-accent transition-colors py-3 border-b border-brand-divider flex items-center gap-2"><i class="fa-solid fa-images"></i> Legacy & Gallery</a>
