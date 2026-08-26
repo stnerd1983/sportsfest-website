@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us | Boğaziçi Sports Fest</title>
   
+  <title>Contact Us | Boğaziçi Sports Fest</title>
   <meta name="description" content="The first and only international universities sports festival held in Turkey, by Boğaziçi Univ. @sportscommittee #since1980." />
   
   <!-- FAVICON (Square WEBP) -->
@@ -40,13 +40,12 @@
               h1: '#0A2A3D',
               h2: '#274B63',
               body: '#5B7481',
-              muted: '#8FA0AE',
               accent: '#12879B',
-              accent2: '#3A6EA5',
-              premium: '#D9A62E',
               border: '#E5E8EB',
               divider: '#EEF2F5',
-              footer_text: '#B8C6D0'
+              footer_text: '#B8C6D0',
+              premium: '#D9A62E',
+              muted: '#8FA0AE'
             }
           }
         }
@@ -56,18 +55,31 @@
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-      background-color: #FCFBF8;
-      color: #5B7481;
+      background-color: #0A2A3D;
+      color: #FFFFFF;
     }
     .sharp-card {
       background: #FFFFFF;
       border: 1px solid #E5E8EB;
-      border-radius: 0px; 
+      border-radius: 0px;
     }
     .matte-nav {
       background: rgba(252, 251, 248, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid #E5E8EB;
+    }
+    
+    .lead-frame {
+      position: relative;
+      padding: 6px;
+      background: linear-gradient(135deg, #D9A62E 0%, #12879B 100%);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    .member-frame {
+      position: relative;
+      padding: 4px;
+      background: linear-gradient(135deg, #A4B0B9 0%, #12879B 100%);
+      box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.4);
     }
   </style>
   <script>
@@ -86,18 +98,9 @@
         icon.classList.add('fa-bars');
       }
     }
-    
-    function closeMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      const icon = document.getElementById('mobile-menu-icon');
-      menu.classList.add('hidden');
-      menu.classList.remove('flex');
-      icon.classList.remove('fa-xmark');
-      icon.classList.add('fa-bars');
-    }
   </script>
 </head>
-<body class="antialiased selection:bg-brand-accent selection:text-white min-h-screen flex flex-col justify-between relative overflow-x-hidden">
+<body class="antialiased selection:bg-brand-accent selection:text-white relative min-h-screen">
 
   <!-- ================= NAVBAR ================= -->
   <nav class="fixed top-0 left-0 w-full z-50 matte-nav text-brand-body">
@@ -113,7 +116,7 @@
         </div>
       </a>
 
-      <!-- Desktop Menu -->
+      <!-- Desktop Links -->
       <div class="hidden lg:flex items-center gap-7 text-sm font-semibold ml-6">
         <a href="index.html" class="text-brand-h2 hover:text-brand-accent transition-colors flex items-center gap-2">
           <i class="fa-solid fa-arrow-left text-xs"></i> Home
@@ -123,170 +126,269 @@
         <a href="index.html#history" class="text-brand-h2 hover:text-brand-accent transition-colors">History</a>
         <a href="index.html#istanbul" class="text-brand-h2 hover:text-brand-accent transition-colors">Istanbul</a>
         <a href="faq.html" class="text-brand-h2 hover:text-brand-accent transition-colors">FAQ</a>
-        <a href="contact.html" class="text-brand-dark font-bold">Contact Us</a>
+        
+        <a href="contact.html" class="text-brand-dark font-bold border-b-2 border-brand-dark pb-1">Contact Us</a>
+
         <a href="gallery-legacy.html" class="px-3 py-1.5 border border-brand-border text-brand-h2 font-bold hover:bg-brand-bg_secondary hover:text-brand-accent transition-all flex items-center gap-1.5 rounded-none">
-          <i class="fa-solid fa-images"></i> Legacy & Gallery
+          <i class="fa-solid fa-images text-brand-accent"></i> Legacy & Gallery
         </a>
       </div>
 
       <div class="flex items-center gap-4 ml-auto">
-        <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="hidden sm:block px-5 py-2.5 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-h2 transition-all rounded-none shadow-sm">
+        <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="hidden lg:block px-5 py-2.5 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-h2 transition-all rounded-none shadow-sm">
           Apply Now!
         </a>
+        <!-- Mobile Menu Button -->
         <button onclick="toggleMobileMenu()" class="lg:hidden text-brand-dark text-2xl focus:outline-none p-2 ml-2">
           <i id="mobile-menu-icon" class="fa-solid fa-bars"></i>
         </button>
       </div>
-
     </div>
 
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden lg:hidden absolute top-24 left-0 w-full bg-brand-bg_primary border-b border-brand-border shadow-xl flex-col px-6 py-4 gap-2 text-sm font-bold z-40">
-      <a href="index.html" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Home</a>
-      <a href="index.html#disciplines" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Disciplines</a>
-      <a href="index.html#packages" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Packages</a>
-      <a href="index.html#history" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">History</a>
-      <a href="index.html#istanbul" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Istanbul</a>
-      <a href="faq.html" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">FAQ</a>
-      <a href="contact.html" onclick="closeMobileMenu()" class="text-brand-accent transition-colors py-3 border-b border-brand-divider">Contact Us</a>
+      <a href="index.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Home</a>
+      <a href="index.html#disciplines" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Disciplines</a>
+      <a href="index.html#packages" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Packages</a>
+      <a href="index.html#history" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">History</a>
+      <a href="index.html#istanbul" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Istanbul</a>
+      <a href="faq.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">FAQ</a>
+      <a href="contact.html" class="text-brand-dark transition-colors py-3 border-b border-brand-divider">Contact Us</a>
       <a href="gallery-legacy.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider flex items-center gap-2"><i class="fa-solid fa-images"></i> Legacy & Gallery</a>
-      <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="mt-4 px-5 py-3 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest text-center transition-all rounded-none shadow-sm block sm:hidden">
+      <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="mt-4 mb-2 px-5 py-3 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest text-center transition-all rounded-none shadow-sm block">
         Apply Now!
       </a>
     </div>
   </nav>
 
-  <!-- ================= CONTACT MAIN ================= -->
-  <main class="pt-40 pb-20 max-w-7xl mx-auto px-6 w-full relative z-10 flex-grow">
+  <!-- ================= HEADER BAR ================= -->
+  <div class="w-full bg-brand-bg_primary pt-32 pb-4 text-center border-b border-brand-border relative z-10">
+    <h1 class="font-display text-3xl md:text-4xl uppercase text-brand-h1 tracking-wide">CONTACT US</h1>
+  </div>
+
+  <!-- ================= MAIN CONTENT AREA ================= -->
+  <div class="relative w-full min-h-screen pb-24">
     
-    <div class="text-center mb-16">
-      <span class="text-brand-accent text-xs font-bold uppercase tracking-widest">Get in Touch</span>
-      <h1 class="font-display text-5xl md:text-7xl uppercase mt-2 text-brand-h1">Contact The Organizing Team</h1>
-      <p class="text-brand-body text-base md:text-lg max-w-2xl mx-auto mt-4 font-medium">Have questions about athlete registration, accommodation, or international partnerships? We are here to help.</p>
+    <div class="absolute inset-0 -z-10 bg-brand-dark">
+      <!-- Background image loading with Webp -->
+      <img src="general media/southcampus.webp" alt="Campus Background" class="w-full h-full object-cover opacity-60 mix-blend-overlay">
+      <!-- Fog overlay explicitly updated to 40% opacity -->
+      <div class="absolute inset-0 bg-[#1e2a4a]/40 backdrop-blur-[2px]"></div>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
-      
-      <!-- Contact Info Box -->
-      <div class="sharp-card p-8 border-t-4 border-t-brand-accent flex flex-col justify-between">
-        <div>
-          <h3 class="font-display text-2xl text-brand-h1 uppercase tracking-wide mb-6">General Enquiries</h3>
-          <div class="flex flex-col gap-6 text-sm font-medium">
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-brand-bg_secondary border border-brand-border flex items-center justify-center text-brand-accent flex-shrink-0">
-                <i class="fa-solid fa-envelope"></i>
-              </div>
-              <div>
-                <span class="block text-xs uppercase font-bold text-brand-muted">Email Us</span>
-                <a href="mailto:info@bogazicisportsfest.com" class="text-brand-dark hover:text-brand-accent transition-colors font-semibold">info@bogazicisportsfest.com</a>
-              </div>
-            </div>
+    <div class="max-w-5xl mx-auto px-6 pt-12 relative z-10 text-center">
+      <h2 class="font-display text-2xl md:text-3xl uppercase tracking-widest mb-12 text-white">ORGANIZATION TEAM</h2>
 
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-brand-bg_secondary border border-brand-border flex items-center justify-center text-brand-accent flex-shrink-0">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
-              <div>
-                <span class="block text-xs uppercase font-bold text-brand-muted">Location</span>
-                <p class="text-brand-dark leading-relaxed">Boğaziçi University South Campus, Bebek, 34342 Beşiktaş/İstanbul</p>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 bg-brand-bg_secondary border border-brand-border flex items-center justify-center text-brand-accent flex-shrink-0">
-                <i class="fa-brands fa-instagram"></i>
-              </div>
-              <div>
-                <span class="block text-xs uppercase font-bold text-brand-muted">Social Media</span>
-                <a href="https://www.instagram.com/sportsfest/" target="_blank" class="text-brand-dark hover:text-brand-accent transition-colors font-semibold">@sportsfest</a>
-              </div>
+      <div class="flex flex-col items-center gap-10 mb-24">
+        
+        <!-- Lead Member -->
+        <div class="flex flex-col items-center">
+          <div class="lead-frame mb-4">
+            <div class="w-32 h-32 md:w-[10.5rem] md:h-[10.5rem] bg-brand-dark overflow-hidden">
+              <img src="general media/lead.webp" alt="Eylül Özer" class="w-full h-full object-cover">
             </div>
           </div>
+          <div class="text-sm font-medium">
+            <div class="font-bold mb-1 text-brand-premium uppercase tracking-widest text-xs">Head of the Team</div>
+            <div class="mb-2 text-base font-bold">Eylül Özer</div>
+            <div class="font-bold text-[10px] uppercase opacity-70">Phone Number</div>
+            <div class="text-xs mb-2">+90 530 910 79 06</div>
+            <div class="font-bold text-[10px] uppercase opacity-70">Email</div>
+            <a href="mailto:eylul@bounsporkurulu.com" class="text-xs hover:text-brand-accent transition-colors">eylul@bounsporkurulu.com</a>
+          </div>
+        </div>
+
+        <!-- 3 Members Row -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16 w-full max-w-4xl">
+          
+          <!-- Member B (Left) -->
+          <div class="flex flex-col items-center">
+            <div class="member-frame mb-4">
+              <div class="w-32 h-32 md:w-[10.5rem] md:h-[10.5rem] bg-brand-dark overflow-hidden">
+                <img src="general media/memberb.webp" alt="Barış Karakoç" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="text-sm font-medium">
+              <div class="font-bold mb-1 text-brand-accent uppercase tracking-widest text-[11px]">Team Member</div>
+              <div class="mb-2 text-base font-bold">Barış Karakoç</div>
+              <div class="font-bold text-[10px] uppercase opacity-70">Phone Number</div>
+              <div class="text-xs mb-2">+90 546 154 49 32</div>
+              <div class="font-bold text-[10px] uppercase opacity-70">Email</div>
+              <a href="mailto:baris@bounsporkurulu.com" class="text-xs hover:text-brand-accent transition-colors">baris@bounsporkurulu.com</a>
+            </div>
+          </div>
+
+          <!-- Member E (Middle) -->
+          <div class="flex flex-col items-center">
+            <div class="member-frame mb-4">
+              <div class="w-32 h-32 md:w-[10.5rem] md:h-[10.5rem] bg-brand-dark overflow-hidden">
+                <img src="general media/membere.webp" alt="Eren Arda Bıçak" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="text-sm font-medium">
+              <div class="font-bold mb-1 text-brand-accent uppercase tracking-widest text-[11px]">Team Member</div>
+              <div class="mb-2 text-base font-bold">Eren Arda Bıçak</div>
+              <div class="font-bold text-[10px] uppercase opacity-70">Phone Number</div>
+              <div class="text-xs mb-2">+90 539 330 37 60</div>
+              <div class="font-bold text-[10px] uppercase opacity-70">Email</div>
+              <a href="mailto:eren@bounsporkurulu.com" class="text-xs hover:text-brand-accent transition-colors">eren@bounsporkurulu.com</a>
+            </div>
+          </div>
+
+          <!-- Member H (Right) -->
+          <div class="flex flex-col items-center">
+            <div class="member-frame mb-4">
+              <div class="w-32 h-32 md:w-[10.5rem] md:h-[10.5rem] bg-brand-dark overflow-hidden">
+                <img src="general media/memberh.webp" alt="Hikmet Eren Doğan" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="text-sm font-medium">
+              <div class="font-bold mb-1 text-brand-accent uppercase tracking-widest text-[11px]">Team Member</div>
+              <div class="mb-2 text-base font-bold">Hikmet Eren Doğan</div>
+              <div class="font-bold text-[10px] uppercase opacity-70">Phone Number</div>
+              <div class="text-xs mb-2">+90 533 273 38 80</div>
+              <div class="font-bold text-[10px] uppercase opacity-70">Email</div>
+              <a href="mailto:hikmet@bounsporkurulu.com" class="text-xs hover:text-brand-accent transition-colors">hikmet@bounsporkurulu.com</a>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- Quick Message Form -->
-      <div class="sharp-card p-8 border-t-4 border-t-brand-accent lg:col-span-2">
-        <h3 class="font-display text-2xl text-brand-h1 uppercase tracking-wide mb-6">Send A Direct Message</h3>
-        <form class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+      <!-- ================= ALIGNED FORM LAYOUT ================= -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full max-w-5xl mx-auto text-left">
+        
+        <!-- General Enquiries Card (Reverted & Re-Aligned) -->
+        <!-- Adjusted padding to logically shift the whole block left and equalize the empty space -->
+        <div class="sharp-card py-8 pl-5 pr-2 md:p-8 lg:py-8 lg:pl-5 lg:pr-3 xl:p-8 border-t-4 border-t-brand-accent text-brand-dark shadow-xl flex flex-col justify-between">
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-brand-h2 mb-2">Your Name</label>
-            <input type="text" required placeholder="John Doe" class="w-full p-3 bg-brand-bg_secondary border border-brand-border focus:border-brand-accent outline-none">
+            <h3 class="font-display text-2xl text-brand-h1 uppercase tracking-wide mb-6">General Enquiries</h3>
+            <div class="flex flex-col gap-6 text-sm font-medium">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-brand-bg_secondary border border-brand-border flex items-center justify-center text-brand-accent flex-shrink-0">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="block text-xs uppercase font-bold text-brand-muted mb-1">Email Us</span>
+                  <a href="mailto:info@bogazicisportsfest.com" class="text-brand-dark hover:text-brand-accent transition-colors font-semibold">info@bogazicisportsfest.com</a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-brand-bg_secondary border border-brand-border flex items-center justify-center text-brand-accent flex-shrink-0">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <span class="block text-xs uppercase font-bold text-brand-muted mb-1">Location</span>
+                  <p class="text-brand-dark leading-relaxed font-semibold">Boğaziçi University South Campus,<br>Bebek, 34342 Beşiktaş/İstanbul</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-brand-bg_secondary border border-brand-border flex items-center justify-center text-brand-accent flex-shrink-0">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div>
+                  <span class="block text-xs uppercase font-bold text-brand-muted mb-1">Social Media</span>
+                  <a href="https://www.instagram.com/sportsfest/" target="_blank" class="text-brand-dark hover:text-brand-accent transition-colors font-semibold">@sportsfest</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-brand-h2 mb-2">Your Email</label>
-            <input type="email" required placeholder="john@example.com" class="w-full p-3 bg-brand-bg_secondary border border-brand-border focus:border-brand-accent outline-none">
-          </div>
-          <div class="md:col-span-2">
-            <label class="block text-xs font-bold uppercase tracking-wider text-brand-h2 mb-2">Subject / University</label>
-            <input type="text" required placeholder="Question regarding registration" class="w-full p-3 bg-brand-bg_secondary border border-brand-border focus:border-brand-accent outline-none">
-          </div>
-          <div class="md:col-span-2">
-            <label class="block text-xs font-bold uppercase tracking-wider text-brand-h2 mb-2">Message</label>
-            <textarea rows="4" required placeholder="How can we help your team?" class="w-full p-3 bg-brand-bg_secondary border border-brand-border focus:border-brand-accent outline-none"></textarea>
-          </div>
-          <div class="md:col-span-2 mt-2">
-            <button type="submit" class="px-8 py-3 bg-brand-dark text-white font-bold uppercase tracking-widest hover:bg-brand-accent transition-all">Send Message</button>
-          </div>
-        </form>
+        </div>
+
+        <!-- Send A Direct Message Form Card (New Brand Colors Applied) -->
+        <div class="sharp-card p-8 border-t-4 border-t-brand-accent lg:col-span-2 text-brand-dark shadow-xl">
+          <h3 class="font-display text-2xl uppercase tracking-wide mb-6">Send A Direct Message</h3>
+          
+          <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-5 text-sm">
+            <input type="hidden" name="access_key" value="7dd546ee-466e-4656-a16c-1c4d3c2ec018">
+            <input type="hidden" name="subject" value="New Contact Form Submission - Sports Fest">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <div>
+              <label class="block text-[10px] font-bold uppercase tracking-widest text-brand-h2 mb-2">Your Name</label>
+              <input type="text" name="Name" required placeholder="John Doe" class="w-full p-3 bg-brand-bg_secondary border border-brand-border focus:border-brand-accent outline-none text-brand-dark placeholder-brand-muted font-medium transition-colors">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold uppercase tracking-widest text-brand-h2 mb-2">Your Email</label>
+              <input type="email" name="Email" required placeholder="john@example.com" class="w-full p-3 bg-brand-bg_secondary border border-brand-border focus:border-brand-accent outline-none text-brand-dark placeholder-brand-muted font-medium transition-colors">
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-[10px] font-bold uppercase tracking-widest text-brand-h2 mb-2">Subject / University</label>
+              <input type="text" name="About" required placeholder="Question regarding registration" class="w-full p-3 bg-brand-bg_secondary border border-brand-border focus:border-brand-accent outline-none text-brand-dark placeholder-brand-muted font-medium transition-colors">
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-[10px] font-bold uppercase tracking-widest text-brand-h2 mb-2">Message</label>
+              <textarea name="Message" rows="4" required placeholder="How can we help your team?" class="w-full p-3 bg-brand-bg_secondary border border-brand-border focus:border-brand-accent outline-none text-brand-dark placeholder-brand-muted font-medium resize-none transition-colors"></textarea>
+            </div>
+            <div class="md:col-span-2 mt-2 flex items-center justify-between">
+              <button type="submit" id="submit-btn" class="px-8 py-3.5 bg-brand-dark text-white font-bold uppercase tracking-widest text-xs hover:bg-brand-h2 transition-all w-full md:w-auto">
+                Send Message
+              </button>
+              <p id="form-result" class="text-xs font-bold uppercase tracking-wider mt-2 md:mt-0 ml-4 hidden"></p>
+            </div>
+          </form>
+
+        </div>
       </div>
+
+      <!-- AJAX Submission Script -->
+      <script>
+        const form = document.getElementById('contact-form');
+        const result = document.getElementById('form-result');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const object = Object.fromEntries(formData);
+          const json = JSON.stringify(object);
+
+          submitBtn.disabled = true;
+          submitBtn.innerText = "SENDING...";
+          result.classList.remove('hidden');
+          result.className = "text-xs font-bold uppercase tracking-wider mt-2 md:mt-0 ml-4 text-brand-body";
+          result.innerHTML = "Sending...";
+
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: json
+          })
+          .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+              result.className = "text-xs font-bold uppercase tracking-wider mt-2 md:mt-0 ml-4 text-emerald-600";
+              result.innerHTML = "Sent successfully!";
+              form.reset();
+            } else {
+              result.className = "text-xs font-bold uppercase tracking-wider mt-2 md:mt-0 ml-4 text-red-600";
+              result.innerHTML = json.message || "Error. Try again.";
+            }
+          })
+          .catch(error => {
+            result.className = "text-xs font-bold uppercase tracking-wider mt-2 md:mt-0 ml-4 text-red-600";
+            result.innerHTML = "Failed. Check connection.";
+          })
+          .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerText = "SEND MESSAGE";
+            setTimeout(() => {
+              result.classList.add('hidden');
+            }, 5000);
+          });
+        });
+      </script>
 
     </div>
-
-    <!-- ================= TEAM MEMBERS SECTION ================= -->
-    <div class="text-center mb-12">
-      <span class="text-brand-accent text-xs font-bold uppercase tracking-widest">Leadership</span>
-      <h2 class="font-display text-4xl md:text-5xl uppercase mt-2 text-brand-h1">Festival Coordinators</h2>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      
-      <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all text-center">
-        <div class="h-64 overflow-hidden bg-brand-divider">
-          <img src="general media/lead.webp" alt="Executive Lead" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-        </div>
-        <div class="p-6 border-t border-brand-border">
-          <h4 class="font-display text-xl text-brand-h1 tracking-wide">Sports Fest Lead</h4>
-          <p class="text-xs text-brand-accent font-bold uppercase tracking-wider mt-1">General Coordinator</p>
-        </div>
-      </div>
-
-      <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all text-center">
-        <div class="h-64 overflow-hidden bg-brand-divider">
-          <img src="general media/memberb.webp" alt="Coordinator" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-        </div>
-        <div class="p-6 border-t border-brand-border">
-          <h4 class="font-display text-xl text-brand-h1 tracking-wide">External Affairs</h4>
-          <p class="text-xs text-brand-accent font-bold uppercase tracking-wider mt-1">International Delegations</p>
-        </div>
-      </div>
-
-      <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all text-center">
-        <div class="h-64 overflow-hidden bg-brand-divider">
-          <img src="general media/membere.webp" alt="Coordinator" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-        </div>
-        <div class="p-6 border-t border-brand-border">
-          <h4 class="font-display text-xl text-brand-h1 tracking-wide">Logistics & Venues</h4>
-          <p class="text-xs text-brand-accent font-bold uppercase tracking-wider mt-1">Operations Coordinator</p>
-        </div>
-      </div>
-
-      <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all text-center">
-        <div class="h-64 overflow-hidden bg-brand-divider">
-          <img src="general media/memberh.webp" alt="Coordinator" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
-        </div>
-        <div class="p-6 border-t border-brand-border">
-          <h4 class="font-display text-xl text-brand-h1 tracking-wide">Sports Disciplines</h4>
-          <p class="text-xs text-brand-accent font-bold uppercase tracking-wider mt-1">Tournament Director</p>
-        </div>
-      </div>
-
-    </div>
-
-  </main>
+  </div>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="bg-brand-dark pt-12 pb-8 relative z-10 w-full text-center">
+  <footer class="bg-brand-dark pt-12 pb-8 relative z-10 w-full text-center border-t border-white/10">
     <div class="max-w-7xl mx-auto px-6">
       
       <div class="max-w-lg mx-auto mb-8">
@@ -321,6 +423,7 @@
       <div class="text-xs text-brand-footer_text border-t border-white/10 pt-6">
         © 2027 Boğaziçi University Sports Committee. All rights reserved.
       </div>
+
     </div>
   </footer>
 
