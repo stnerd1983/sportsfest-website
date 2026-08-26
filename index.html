@@ -3,10 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Boğaziçi University | Sports Fest</title>
   
-  <!-- FAVICON (Tab Icon) -->
-  <link rel="icon" type="image/png" href="general media/sportsfest.png">
+  <title>Boğaziçi University | Sports Fest</title>
+  <meta name="description" content="The first and only international universities sports festival held in Turkey, by Boğaziçi Univ. @sportscommittee #since1980." />
+  
+  <!-- FAVICON (Square WEBP) -->
+  <link rel="icon" type="image/webp" href="general%20media/favicon.webp">
+  <link rel="apple-touch-icon" href="general%20media/favicon.webp">
+  
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Boğaziçi University | Sports Fest" />
+  <meta property="og:description" content="The first and only international universities sports festival held in Turkey, by Boğaziçi Univ. @sportscommittee #since1980." />
+  <meta property="og:image" content="general%20media/sportsfest.webp" />
+  <meta property="og:type" content="website" />
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +113,7 @@
       
       <a href="#about" class="flex items-center gap-3 border-r border-brand-divider pr-6">
         <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-brand-border bg-brand-card flex items-center justify-center">
-          <img src="general media/sportsfest.png" alt="Sports Fest Logo" class="w-full h-full object-cover">
+          <img src="general media/sportsfest.webp" alt="Sports Fest Logo" class="w-full h-full object-cover">
         </div>
         <div class="text-left">
           <span class="font-display text-2xl tracking-wide block leading-none text-brand-h1">SPORTS FEST</span>
@@ -130,7 +139,6 @@
         <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="hidden lg:block px-5 py-2.5 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest hover:bg-brand-h2 transition-all rounded-none shadow-sm">
           Apply Now!
         </a>
-        <!-- Mobile Menu Button -->
         <button onclick="toggleMobileMenu()" class="lg:hidden text-brand-dark text-2xl focus:outline-none p-2 ml-2">
           <i id="mobile-menu-icon" class="fa-solid fa-bars"></i>
         </button>
@@ -145,8 +153,8 @@
       <a href="#packages" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Packages</a>
       <a href="#history" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">History</a>
       <a href="#istanbul" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Istanbul</a>
-      <a href="faq.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">FAQ</a>
-      <a href="contact.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Contact Us</a>
+      <a href="faq.html" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">FAQ</a>
+      <a href="contact.html" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Contact Us</a>
       <a href="gallery-legacy.html" class="text-brand-accent transition-colors py-3 border-b border-brand-divider flex items-center gap-2"><i class="fa-solid fa-images"></i> Legacy & Gallery</a>
       <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="mt-4 mb-2 px-5 py-3 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest text-center transition-all rounded-none shadow-sm block">
         Apply Now!
@@ -158,7 +166,7 @@
   <section id="about" class="relative pt-28 pb-16 min-h-screen flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 -z-20 bg-brand-dark">
       <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-90">
-        <source src="general media/bg-video.mp4" type="video/mp4">
+        <source src="general media/bg-video.webm" type="video/webm">
       </video>
     </div>
 
@@ -595,7 +603,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
           <div class="h-48 overflow-hidden bg-brand-divider">
-            <img src="general media/ferrytour.jpg" alt="Bosphorus Ferry Tour" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
+            <img src="general media/ferrytour.webp" alt="Bosphorus Ferry Tour" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
           </div>
           <div class="p-6 border-t border-brand-border">
             <h3 class="font-display text-2xl mb-2 text-brand-h1 tracking-wide">Bosphorus Ferry Tour</h3>
@@ -605,7 +613,7 @@
 
         <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
           <div class="h-48 overflow-hidden bg-brand-divider">
-            <img src="general media/southcampus.png" alt="Historic South Campus" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
+            <img src="general media/southcampus.webp" alt="Historic South Campus" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
           </div>
           <div class="p-6 border-t border-brand-border">
             <h3 class="font-display text-2xl mb-2 text-brand-h1 tracking-wide">Historic South Campus</h3>
@@ -615,7 +623,7 @@
 
         <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
           <div class="h-48 overflow-hidden bg-brand-divider">
-            <img src="general media/nightsbysk.png" alt="Istanbul Nightlife" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
+            <img src="general media/nightsbysk.webp" alt="Istanbul Nightlife" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
           </div>
           <div class="p-6 border-t border-brand-border">
             <h3 class="font-display text-2xl mb-2 text-brand-h1 tracking-wide">Unforgettable Nightlife</h3>
@@ -625,7 +633,7 @@
         
         <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
           <div class="h-48 overflow-hidden bg-brand-divider">
-            <img src="general media/turkishfood.png" alt="Turkish Food" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
+            <img src="general media/turkishfood.webp" alt="Turkish Food" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
           </div>
           <div class="p-6 border-t border-brand-border">
             <h3 class="font-display text-2xl mb-2 text-brand-h1 tracking-wide">Turkish Food</h3>
@@ -635,7 +643,7 @@
 
         <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
           <div class="h-48 overflow-hidden bg-brand-divider">
-            <img src="general media/placestovisit.png" alt="Places to Visit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
+            <img src="general media/placestovisit.webp" alt="Places to Visit" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
           </div>
           <div class="p-6 border-t border-brand-border">
             <h3 class="font-display text-2xl mb-2 text-brand-h1 tracking-wide">Places to Visit</h3>
@@ -645,7 +653,7 @@
 
         <div class="sharp-card overflow-hidden group hover:border-brand-accent transition-all">
           <div class="h-48 overflow-hidden bg-brand-divider">
-            <img src="general media/istanbulcats.png" alt="Istanbul Cats" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
+            <img src="general media/istanbulcats.webp" alt="Istanbul Cats" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 opacity-90 mix-blend-multiply">
           </div>
           <div class="p-6 border-t border-brand-border">
             <h3 class="font-display text-2xl mb-2 text-brand-h1 tracking-wide">Istanbul Cats</h3>
@@ -683,7 +691,7 @@
       <div class="my-8 flex flex-col items-center justify-center">
         <div class="w-48 h-48 md:w-64 md:h-64 rounded-xl border border-white/10 flex items-center justify-center bg-brand-dark overflow-hidden p-1 shadow-lg">
           <video autoplay loop muted playsinline controlslist="nodownload" class="w-full h-full object-cover rounded-xl">
-            <source src="general media/torch-animation.mp4" type="video/mp4">
+            <source src="general media/torch-animation.webm" type="video/webm">
           </video>
         </div>
         <span class="text-[11px] font-bold text-white tracking-widest uppercase mt-5 block">The Festival Flame Keeps Burning</span>
