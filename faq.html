@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FAQ | Boğaziçi Sports Fest</title>
   
+  <meta name="description" content="The first and only international universities sports festival held in Turkey, by Boğaziçi Univ. @sportscommittee #since1980." />
+  
+  <!-- FAVICON (Square WEBP) -->
+  <link rel="icon" type="image/webp" href="general%20media/favicon.webp">
+  <link rel="apple-touch-icon" href="general%20media/favicon.webp">
+  
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="FAQ | Boğaziçi Sports Fest" />
+  <meta property="og:description" content="The first and only international universities sports festival held in Turkey, by Boğaziçi Univ. @sportscommittee #since1980." />
+  <meta property="og:image" content="general%20media/sportsfest.webp" />
+  <meta property="og:type" content="website" />
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,6 +71,20 @@
     }
   </style>
   <script>
+    function toggleFaq(id) {
+      const content = document.getElementById('faq-content-' + id);
+      const icon = document.getElementById('faq-icon-' + id);
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.classList.remove('fa-plus');
+        icon.classList.add('fa-minus');
+      } else {
+        content.classList.add('hidden');
+        icon.classList.remove('fa-minus');
+        icon.classList.add('fa-plus');
+      }
+    }
+
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       const icon = document.getElementById('mobile-menu-icon');
@@ -74,6 +100,15 @@
         icon.classList.add('fa-bars');
       }
     }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const icon = document.getElementById('mobile-menu-icon');
+      menu.classList.add('hidden');
+      menu.classList.remove('flex');
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+    }
   </script>
 </head>
 <body class="antialiased selection:bg-brand-accent selection:text-white min-h-screen flex flex-col justify-between relative overflow-x-hidden">
@@ -84,7 +119,7 @@
       
       <a href="index.html" class="flex items-center gap-3 border-r border-brand-divider pr-6">
         <div class="w-12 h-12 rounded-xl overflow-hidden border-2 border-brand-border bg-brand-card flex items-center justify-center">
-          <img src="general media/sportsfest.png" alt="Sports Fest Logo" class="w-full h-full object-cover">
+          <img src="general media/sportsfest.webp" alt="Sports Fest Logo" class="w-full h-full object-cover">
         </div>
         <div class="text-left">
           <span class="font-display text-2xl tracking-wide block leading-none text-brand-h1">SPORTS FEST</span>
@@ -121,14 +156,14 @@
 
     <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden lg:hidden absolute top-24 left-0 w-full bg-brand-bg_primary border-b border-brand-border shadow-xl flex-col px-6 py-4 gap-2 text-sm font-bold z-40">
-      <a href="index.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Home</a>
-      <a href="index.html#disciplines" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Disciplines</a>
-      <a href="index.html#packages" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Packages</a>
-      <a href="index.html#history" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">History</a>
-      <a href="index.html#istanbul" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Istanbul</a>
-      <a href="faq.html" class="text-brand-dark transition-colors py-3 border-b border-brand-divider">FAQ</a>
-      <a href="contact.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Contact Us</a>
-      <a href="gallery-legacy.html" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider flex items-center gap-2"><i class="fa-solid fa-images"></i> Legacy & Gallery</a>
+      <a href="index.html" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Home</a>
+      <a href="index.html#disciplines" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Disciplines</a>
+      <a href="index.html#packages" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Packages</a>
+      <a href="index.html#history" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">History</a>
+      <a href="index.html#istanbul" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Istanbul</a>
+      <a href="faq.html" onclick="closeMobileMenu()" class="text-brand-dark transition-colors py-3 border-b border-brand-divider">FAQ</a>
+      <a href="contact.html" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider">Contact Us</a>
+      <a href="gallery-legacy.html" onclick="closeMobileMenu()" class="text-brand-h2 hover:text-brand-accent transition-colors py-3 border-b border-brand-divider flex items-center gap-2"><i class="fa-solid fa-images"></i> Legacy & Gallery</a>
       <a href="https://surveys.questionpro.com/a/TakeSurvey?tt=ApqzZPrv87oECHrPeIW9eQ%3D%3D" target="_blank" rel="noopener noreferrer" class="mt-4 mb-2 px-5 py-3 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest text-center transition-all rounded-none shadow-sm block">
         Apply Now!
       </a>
@@ -146,65 +181,73 @@
       <p class="text-brand-body text-lg max-w-2xl mx-auto mt-6 font-medium leading-relaxed">Everything you need to know about preparing for and attending Boğaziçi University Sports Fest.</p>
     </div>
 
-    <!-- FAQ List -->
+    <!-- FAQ Accordion List -->
     <div class="space-y-6">
       
       <!-- Q1 -->
-      <div class="sharp-card p-8 border-l-4 border-l-brand-h2 hover:border-l-brand-accent transition-all">
-        <h3 class="font-display text-2xl text-brand-h1 mb-4 flex items-start gap-4">
-          <span class="text-brand-accent text-3xl leading-none">1.</span> 
-          What is the maximum number of participants for each university and team?
-        </h3>
-        <p class="text-brand-body font-medium leading-relaxed pl-11">
+      <div class="sharp-card border-l-4 border-l-brand-accent transition-all duration-300">
+        <button onclick="toggleFaq(1)" class="w-full p-6 flex justify-between items-center text-left hover:bg-brand-bg_secondary transition-colors focus:outline-none">
+          <span class="font-display text-xl md:text-2xl text-brand-h1 tracking-wide"><span class="text-brand-accent mr-2">1.</span> What is the maximum number of participants for each university and team?</span>
+          <i id="faq-icon-1" class="fa-solid fa-plus text-brand-accent text-lg ml-4 flex-shrink-0"></i>
+        </button>
+        <div id="faq-content-1" class="hidden p-6 border-t border-brand-divider text-sm leading-relaxed text-brand-body bg-white font-medium">
           There is no limit on the number of participants per university, so you are welcome to apply to Sports Fest with all of your teams. However, due to limited quotas, only one team per branch for team sports will be accepted during the initial phase.
-        </p>
+        </div>
       </div>
 
       <!-- Q2 -->
-      <div class="sharp-card p-8 border-l-4 border-l-brand-h2 hover:border-l-brand-accent transition-all">
-        <h3 class="font-display text-2xl text-brand-h1 mb-4 flex items-start gap-4">
-          <span class="text-brand-accent text-3xl leading-none">2.</span> 
-          What is the best date to come and leave İstanbul?
-        </h3>
-        <p class="text-brand-body font-medium leading-relaxed pl-11">
+      <div class="sharp-card border-l-4 border-l-brand-accent transition-all duration-300">
+        <button onclick="toggleFaq(2)" class="w-full p-6 flex justify-between items-center text-left hover:bg-brand-bg_secondary transition-colors focus:outline-none">
+          <span class="font-display text-xl md:text-2xl text-brand-h1 tracking-wide"><span class="text-brand-accent mr-2">2.</span> What is the best date to come and leave İstanbul?</span>
+          <i id="faq-icon-2" class="fa-solid fa-plus text-brand-accent text-lg ml-4 flex-shrink-0"></i>
+        </button>
+        <div id="faq-content-2" class="hidden p-6 border-t border-brand-divider text-sm leading-relaxed text-brand-body bg-white font-medium">
           If you purchase one of our accommodation packages, the accommodation we provide covers the 3 nights of the festival. Therefore, it is best to plan your visit around these dates. However, you are welcome to arrive earlier or leave later. In that case, please contact our team with your arrival and departure dates so we can help you arrange accommodation for those extra nights.
-        </p>
+        </div>
       </div>
 
       <!-- Q3 -->
-      <div class="sharp-card p-8 border-l-4 border-l-brand-h2 hover:border-l-brand-accent transition-all">
-        <h3 class="font-display text-2xl text-brand-h1 mb-4 flex items-start gap-4">
-          <span class="text-brand-accent text-3xl leading-none">3.</span> 
-          How is it possible to contact with the organisation team?
-        </h3>
-        <p class="text-brand-body font-medium leading-relaxed pl-11">
+      <div class="sharp-card border-l-4 border-l-brand-accent transition-all duration-300">
+        <button onclick="toggleFaq(3)" class="w-full p-6 flex justify-between items-center text-left hover:bg-brand-bg_secondary transition-colors focus:outline-none">
+          <span class="font-display text-xl md:text-2xl text-brand-h1 tracking-wide"><span class="text-brand-accent mr-2">3.</span> How is it possible to contact with the organisation team?</span>
+          <i id="faq-icon-3" class="fa-solid fa-plus text-brand-accent text-lg ml-4 flex-shrink-0"></i>
+        </button>
+        <div id="faq-content-3" class="hidden p-6 border-t border-brand-divider text-sm leading-relaxed text-brand-body bg-white font-medium">
           You can easily contact with Sports Fest team about any issue by sending an email to <a href="mailto:info@bogazicisportsfest.com" class="text-brand-accent font-bold hover:underline">info@bogazicisportsfest.com</a>. We will be glad to answer any questions and provide you information you need.
-        </p>
+        </div>
       </div>
 
       <!-- Q4 -->
-      <div class="sharp-card p-8 border-l-4 border-l-brand-h2 hover:border-l-brand-accent transition-all">
-        <h3 class="font-display text-2xl text-brand-h1 mb-4 flex items-start gap-4">
-          <span class="text-brand-accent text-3xl leading-none">4.</span> 
-          Is it going to be any guidance for us in Istanbul?
-        </h3>
-        <p class="text-brand-body font-medium leading-relaxed pl-11 mb-3">
+      <div class="sharp-card border-l-4 border-l-brand-accent transition-all duration-300">
+        <button onclick="toggleFaq(4)" class="w-full p-6 flex justify-between items-center text-left hover:bg-brand-bg_secondary transition-colors focus:outline-none">
+          <span class="font-display text-xl md:text-2xl text-brand-h1 tracking-wide"><span class="text-brand-accent mr-2">4.</span> Is it going to be any guidance for us in Istanbul?</span>
+          <i id="faq-icon-4" class="fa-solid fa-plus text-brand-accent text-lg ml-4 flex-shrink-0"></i>
+        </button>
+        <div id="faq-content-4" class="hidden p-6 border-t border-brand-divider text-sm leading-relaxed text-brand-body bg-white font-medium">
           Head guides will be assigned to each university team before the Sports Fest begins. They will be ready to pick you up at the airport holding a sign with your university's name and will accompany you throughout the festival.
-        </p>
+        </div>
       </div>
 
       <!-- Q5 -->
-      <div class="sharp-card p-8 border-l-4 border-l-brand-h2 hover:border-l-brand-accent transition-all">
-        <h3 class="font-display text-2xl text-brand-h1 mb-4 flex items-start gap-4">
-          <span class="text-brand-accent text-3xl leading-none">5.</span> 
-          Who can participate in Sports Fest?
-        </h3>
-        <p class="text-brand-body font-medium leading-relaxed pl-11 mb-3">
+      <div class="sharp-card border-l-4 border-l-brand-accent transition-all duration-300">
+        <button onclick="toggleFaq(5)" class="w-full p-6 flex justify-between items-center text-left hover:bg-brand-bg_secondary transition-colors focus:outline-none">
+          <span class="font-display text-xl md:text-2xl text-brand-h1 tracking-wide"><span class="text-brand-accent mr-2">5.</span> Who can participate in Sports Fest?</span>
+          <i id="faq-icon-5" class="fa-solid fa-plus text-brand-accent text-lg ml-4 flex-shrink-0"></i>
+        </button>
+        <div id="faq-content-5" class="hidden p-6 border-t border-brand-divider text-sm leading-relaxed text-brand-body bg-white font-medium">
           Sports Fest is open to university athletes who are over 18 years of age. In addition to current university teams, alumni teams are also welcome to participate in the tournaments.
-        </p>
+        </div>
       </div>
 
     </div>
+
+    <!-- ================= STILL HAVE QUESTIONS BANNER ================= -->
+    <div class="mt-16 sharp-card p-10 bg-brand-bg_secondary text-center shadow-sm">
+      <h3 class="font-display text-3xl md:text-4xl text-brand-h1 uppercase tracking-wide mb-3">Still have questions?</h3>
+      <p class="text-brand-body font-medium mb-8">Our organizing committee is ready to answer specific questions regarding your delegation.</p>
+      <a href="contact.html" class="inline-block px-8 py-3.5 bg-brand-dark text-white font-bold uppercase tracking-widest text-sm hover:bg-brand-h2 transition-all">Contact Us Directly</a>
+    </div>
+
   </main>
 
   <!-- ================= FOOTER ================= -->
@@ -233,9 +276,10 @@
       <div class="my-8 flex flex-col items-center justify-center">
         <div class="w-32 h-32 md:w-40 md:h-40 rounded-xl border border-white/10 flex items-center justify-center bg-brand-dark overflow-hidden p-1 shadow-lg">
           <video autoplay loop muted playsinline controlslist="nodownload" class="w-full h-full object-cover rounded-xl">
-            <source src="general media/torch-animation.mp4" type="video/mp4">
+            <source src="general media/torch-animation.webm" type="video/webm">
           </video>
         </div>
+        <span class="text-[11px] font-bold text-white tracking-widest uppercase mt-5 block">The Festival Flame Keeps Burning</span>
       </div>
 
       <div class="text-xs text-brand-footer_text border-t border-white/10 pt-6">
